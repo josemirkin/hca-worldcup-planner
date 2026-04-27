@@ -1,0 +1,592 @@
+{
+  "drinks": [
+    {
+      "id": "aguardiente",
+      "name": "Aguardiente",
+      "type": "anise_spirit",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "ale",
+      "name": "Ale",
+      "type": "beer_style",
+      "category": "beer",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "algerian_wine",
+      "name": "Algerian wine",
+      "type": "wine",
+      "category": "wine",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "aquavit",
+      "name": "Aquavit",
+      "type": "spirit",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "arabic_coffee",
+      "name": "Arabic coffee",
+      "type": "non_alcoholic",
+      "category": "non_alcoholic",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "arak",
+      "name": "Arak",
+      "type": "anise_spirit",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ],
+      "notes": "Anise-flavored spirit common in the Levant."
+    },
+    {
+      "id": "australian_beer",
+      "name": "Australian beer",
+      "type": "beer",
+      "category": "beer",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "austrian_beer",
+      "name": "Austrian beer",
+      "type": "beer",
+      "category": "beer",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "beer",
+      "name": "Beer",
+      "type": "beer",
+      "category": "beer",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "belgian_beer",
+      "name": "Belgian beer",
+      "type": "beer",
+      "category": "beer",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "blue_curacao",
+      "name": "Blue Curaçao",
+      "type": "liqueur",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "boukha",
+      "name": "Boukha",
+      "type": "fig_spirit",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ],
+      "originCountry": "tunisia"
+    },
+    {
+      "id": "bourbon",
+      "name": "Bourbon",
+      "type": "whiskey",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ],
+      "originCountry": "united_states"
+    },
+    {
+      "id": "caesar",
+      "name": "Caesar",
+      "type": "cocktail",
+      "category": "cocktail",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "caipirinha",
+      "name": "Caipirinha",
+      "type": "cocktail",
+      "category": "cocktail",
+      "contexts": [
+        "watch"
+      ],
+      "originCountry": "brazil",
+      "notes": "Brazil's signature cocktail, made with cachaça, lime and sugar."
+    },
+    {
+      "id": "cana",
+      "name": "Caña",
+      "type": "sugarcane_spirit",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ],
+      "originCountry": "paraguay"
+    },
+    {
+      "id": "canelazo",
+      "name": "Canelazo",
+      "type": "warm_cocktail",
+      "category": "cocktail",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "cider",
+      "name": "Cider",
+      "type": "cider",
+      "category": "cider",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "cocktails",
+      "name": "Cocktails",
+      "type": "mixed_drinks",
+      "category": "cocktail",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "egyptian_beer",
+      "name": "Egyptian beer",
+      "type": "beer",
+      "category": "beer",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "fernet",
+      "name": "Fernet",
+      "type": "herbal_liqueur",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ],
+      "popularBrands": [
+        "fernet_branca"
+      ],
+      "commonMixers": [
+        "coca_cola"
+      ],
+      "typicalServe": "Fernet con Coca",
+      "notes": "Popular in Argentina, usually mixed with Coca-Cola."
+    },
+    {
+      "id": "french_wine",
+      "name": "French wine",
+      "type": "wine",
+      "category": "wine",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "german_beer",
+      "name": "German beer",
+      "type": "beer",
+      "category": "beer",
+      "contexts": [
+        "stadium",
+        "watch"
+      ],
+      "originCountry": "germany"
+    },
+    {
+      "id": "grogue",
+      "name": "Grogue",
+      "type": "sugarcane_spirit",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ],
+      "originCountry": "cape_verde"
+    },
+    {
+      "id": "highball",
+      "name": "Highball",
+      "type": "whisky_soda",
+      "category": "cocktail",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "jenever",
+      "name": "Jenever",
+      "type": "juniper_spirit",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "malbec",
+      "name": "Malbec",
+      "type": "red_wine",
+      "category": "wine",
+      "contexts": [
+        "watch"
+      ],
+      "originCountry": "argentina",
+      "notes": "Argentina's flagship wine."
+    },
+    {
+      "id": "michelada",
+      "name": "Michelada",
+      "type": "beer_cocktail",
+      "category": "cocktail",
+      "contexts": [
+        "watch"
+      ],
+      "originCountry": "mexico",
+      "notes": "Beer cocktail commonly made with lime, sauces/spices and beer."
+    },
+    {
+      "id": "mint_tea",
+      "name": "Mint tea",
+      "type": "non_alcoholic",
+      "category": "non_alcoholic",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "moroccan_wine",
+      "name": "Moroccan wine",
+      "type": "wine",
+      "category": "wine",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "non_alcoholic_beer",
+      "name": "Non-alcoholic beer",
+      "type": "non_alcoholic_beer",
+      "category": "non_alcoholic",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "non_alcoholic_drinks",
+      "name": "Non-alcoholic drinks",
+      "type": "non_alcoholic",
+      "category": "non_alcoholic",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "palm_wine",
+      "name": "Palm wine",
+      "type": "fermented_palm_sap",
+      "category": "wine",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "pilsner",
+      "name": "Pilsner",
+      "type": "beer_style",
+      "category": "beer",
+      "contexts": [
+        "stadium",
+        "watch"
+      ],
+      "originCountry": "czechia"
+    },
+    {
+      "id": "pinotage",
+      "name": "Pinotage",
+      "type": "red_wine",
+      "category": "wine",
+      "contexts": [
+        "watch"
+      ],
+      "originCountry": "south_africa"
+    },
+    {
+      "id": "port_wine",
+      "name": "Port wine",
+      "type": "fortified_wine",
+      "category": "wine",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "primus_beer",
+      "name": "Primus beer",
+      "type": "beer",
+      "category": "beer",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "raki",
+      "name": "Rakı",
+      "type": "anise_spirit",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ],
+      "originCountry": "turkiye"
+    },
+    {
+      "id": "rakija",
+      "name": "Rakija",
+      "type": "fruit_brandy",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ],
+      "notes": "Fruit brandy common across the Balkans."
+    },
+    {
+      "id": "rhum_barbancourt",
+      "name": "Rhum Barbancourt",
+      "type": "rum",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ],
+      "originCountry": "haiti"
+    },
+    {
+      "id": "rtd_spirits",
+      "name": "RTD spirits",
+      "type": "ready_to_drink",
+      "category": "cocktail",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "rum",
+      "name": "Rum",
+      "type": "rum",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "rum_drinks",
+      "name": "Rum drinks",
+      "type": "rum_cocktail",
+      "category": "cocktail",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "sake",
+      "name": "Sake",
+      "type": "rice_wine",
+      "category": "wine",
+      "contexts": [
+        "watch"
+      ],
+      "originCountry": "japan"
+    },
+    {
+      "id": "sangria",
+      "name": "Sangria",
+      "type": "wine_cocktail",
+      "category": "cocktail",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "sauvignon_blanc",
+      "name": "Sauvignon Blanc",
+      "type": "white_wine",
+      "category": "wine",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "scotch_whisky",
+      "name": "Scotch whisky",
+      "type": "whisky",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ],
+      "originCountry": "scotland"
+    },
+    {
+      "id": "seco",
+      "name": "Seco",
+      "type": "sugarcane_spirit",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ],
+      "originCountry": "panama"
+    },
+    {
+      "id": "senegalese_beer",
+      "name": "Senegalese beer",
+      "type": "beer",
+      "category": "beer",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "soft_drinks",
+      "name": "Soft drinks",
+      "type": "non_alcoholic",
+      "category": "non_alcoholic",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "soju",
+      "name": "Soju",
+      "type": "distilled_spirit",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ],
+      "originCountry": "south_korea"
+    },
+    {
+      "id": "somaek",
+      "name": "Somaek",
+      "type": "beer_soju_mix",
+      "category": "cocktail",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "swiss_wine",
+      "name": "Swiss wine",
+      "type": "wine",
+      "category": "wine",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "tannat",
+      "name": "Tannat",
+      "type": "red_wine",
+      "category": "wine",
+      "contexts": [
+        "watch"
+      ],
+      "originCountry": "uruguay"
+    },
+    {
+      "id": "tea",
+      "name": "Tea",
+      "type": "non_alcoholic",
+      "category": "non_alcoholic",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "tequila",
+      "name": "Tequila",
+      "type": "agave_spirit",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ],
+      "originCountry": "mexico"
+    },
+    {
+      "id": "tinto_de_verano",
+      "name": "Tinto de verano",
+      "type": "wine_cocktail",
+      "category": "cocktail",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "vodka",
+      "name": "Vodka",
+      "type": "spirit",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "whisky",
+      "name": "Whisky",
+      "type": "whisky",
+      "category": "spirit",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "wine",
+      "name": "Wine",
+      "type": "wine",
+      "category": "wine",
+      "contexts": [
+        "watch"
+      ]
+    }
+  ]
+}

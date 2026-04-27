@@ -1,0 +1,483 @@
+{
+  "brands": [
+    {
+      "id": "1664",
+      "name": "1664",
+      "type": "beer_brand",
+      "originCountry": "france"
+    },
+    {
+      "id": "aguila",
+      "name": "Águila",
+      "type": "beer_brand",
+      "originCountry": "colombia"
+    },
+    {
+      "id": "amstel",
+      "name": "Amstel",
+      "type": "beer_brand",
+      "originCountry": "netherlands"
+    },
+    {
+      "id": "amstel_bright",
+      "name": "Amstel Bright",
+      "type": "beer_brand",
+      "originCountry": "curacao"
+    },
+    {
+      "id": "antarctica",
+      "name": "Antarctica",
+      "type": "beer_brand",
+      "originCountry": "brazil"
+    },
+    {
+      "id": "asahi",
+      "name": "Asahi",
+      "type": "beer_brand",
+      "originCountry": "japan"
+    },
+    {
+      "id": "atlas",
+      "name": "Atlas",
+      "type": "beer_brand",
+      "originCountry": "panama"
+    },
+    {
+      "id": "balboa",
+      "name": "Balboa",
+      "type": "beer_brand",
+      "originCountry": "panama"
+    },
+    {
+      "id": "becks",
+      "name": "Beck's",
+      "type": "beer_brand",
+      "originCountry": "germany"
+    },
+    {
+      "id": "belhaven",
+      "name": "Belhaven",
+      "type": "beer_brand",
+      "originCountry": "scotland"
+    },
+    {
+      "id": "bitburger",
+      "name": "Bitburger",
+      "type": "beer_brand",
+      "originCountry": "germany"
+    },
+    {
+      "id": "bock_ivory_coast",
+      "name": "Bock",
+      "type": "beer_brand",
+      "originCountry": "ivory_coast"
+    },
+    {
+      "id": "brahma",
+      "name": "Brahma",
+      "type": "beer_brand",
+      "originCountry": "brazil"
+    },
+    {
+      "id": "bud_light",
+      "name": "Bud Light",
+      "type": "beer_brand",
+      "originCountry": "united_states"
+    },
+    {
+      "id": "carling",
+      "name": "Carling",
+      "type": "beer_brand",
+      "originCountry": "england"
+    },
+    {
+      "id": "carling_black_label",
+      "name": "Carling Black Label",
+      "type": "beer_brand",
+      "originCountry": "south_africa"
+    },
+    {
+      "id": "carlsberg",
+      "name": "Carlsberg",
+      "type": "beer_brand",
+      "originCountry": "denmark"
+    },
+    {
+      "id": "carlton_draught",
+      "name": "Carlton Draught",
+      "type": "beer_brand",
+      "originCountry": "australia"
+    },
+    {
+      "id": "casablanca_beer",
+      "name": "Casablanca Beer",
+      "type": "beer_brand",
+      "originCountry": "morocco"
+    },
+    {
+      "id": "cass",
+      "name": "Cass",
+      "type": "beer_brand",
+      "originCountry": "south_korea"
+    },
+    {
+      "id": "castle_lager",
+      "name": "Castle Lager",
+      "type": "beer_brand",
+      "originCountry": "south_africa"
+    },
+    {
+      "id": "celtia",
+      "name": "Celtia",
+      "type": "beer_brand",
+      "originCountry": "tunisia"
+    },
+    {
+      "id": "club_colombia",
+      "name": "Club Colombia",
+      "type": "beer_brand",
+      "originCountry": "colombia"
+    },
+    {
+      "id": "club_ecuador",
+      "name": "Club",
+      "type": "beer_brand",
+      "originCountry": "ecuador"
+    },
+    {
+      "id": "club_ghana",
+      "name": "Club Beer",
+      "type": "beer_brand",
+      "originCountry": "ghana"
+    },
+    {
+      "id": "coca_cola",
+      "name": "Coca-Cola",
+      "type": "mixer_brand"
+    },
+    {
+      "id": "coors_light",
+      "name": "Coors Light",
+      "type": "beer_brand",
+      "originCountry": "united_states"
+    },
+    {
+      "id": "corona",
+      "name": "Corona",
+      "type": "beer_brand",
+      "originCountry": "mexico"
+    },
+    {
+      "id": "duvel",
+      "name": "Duvel",
+      "type": "beer_brand",
+      "originCountry": "belgium"
+    },
+    {
+      "id": "efes",
+      "name": "Efes",
+      "type": "beer_brand",
+      "originCountry": "turkiye"
+    },
+    {
+      "id": "estrella_damm",
+      "name": "Estrella Damm",
+      "type": "beer_brand",
+      "originCountry": "spain"
+    },
+    {
+      "id": "falcon",
+      "name": "Falcon",
+      "type": "beer_brand",
+      "originCountry": "sweden"
+    },
+    {
+      "id": "feldschlosschen",
+      "name": "Feldschlösschen",
+      "type": "beer_brand",
+      "originCountry": "switzerland"
+    },
+    {
+      "id": "fernet_branca",
+      "name": "Fernet-Branca",
+      "type": "spirit_brand",
+      "originCountry": "italy"
+    },
+    {
+      "id": "flag",
+      "name": "Flag",
+      "type": "beer_brand",
+      "originCountry": "senegal"
+    },
+    {
+      "id": "gazelle",
+      "name": "Gazelle",
+      "type": "beer_brand",
+      "originCountry": "senegal"
+    },
+    {
+      "id": "gosser",
+      "name": "Gösser",
+      "type": "beer_brand",
+      "originCountry": "austria"
+    },
+    {
+      "id": "guinness",
+      "name": "Guinness",
+      "type": "beer_brand",
+      "originCountry": "ireland"
+    },
+    {
+      "id": "hansa",
+      "name": "Hansa",
+      "type": "beer_brand",
+      "originCountry": "norway"
+    },
+    {
+      "id": "heineken",
+      "name": "Heineken",
+      "type": "beer_brand",
+      "originCountry": "netherlands"
+    },
+    {
+      "id": "hite",
+      "name": "Hite",
+      "type": "beer_brand",
+      "originCountry": "south_korea"
+    },
+    {
+      "id": "jupiler",
+      "name": "Jupiler",
+      "type": "beer_brand",
+      "originCountry": "belgium"
+    },
+    {
+      "id": "karlovacko",
+      "name": "Karlovačko",
+      "type": "beer_brand",
+      "originCountry": "croatia"
+    },
+    {
+      "id": "kirin",
+      "name": "Kirin",
+      "type": "beer_brand",
+      "originCountry": "japan"
+    },
+    {
+      "id": "kronenbourg",
+      "name": "Kronenbourg",
+      "type": "beer_brand",
+      "originCountry": "france"
+    },
+    {
+      "id": "labatt",
+      "name": "Labatt",
+      "type": "beer_brand",
+      "originCountry": "canada"
+    },
+    {
+      "id": "leffe",
+      "name": "Leffe",
+      "type": "beer_brand",
+      "originCountry": "belgium"
+    },
+    {
+      "id": "mahou",
+      "name": "Mahou",
+      "type": "beer_brand",
+      "originCountry": "spain"
+    },
+    {
+      "id": "miller_lite",
+      "name": "Miller Lite",
+      "type": "beer_brand",
+      "originCountry": "united_states"
+    },
+    {
+      "id": "modelo",
+      "name": "Modelo",
+      "type": "beer_brand",
+      "originCountry": "mexico"
+    },
+    {
+      "id": "molson",
+      "name": "Molson",
+      "type": "beer_brand",
+      "originCountry": "canada"
+    },
+    {
+      "id": "ozujsko",
+      "name": "Ožujsko",
+      "type": "beer_brand",
+      "originCountry": "croatia"
+    },
+    {
+      "id": "pacifico",
+      "name": "Pacífico",
+      "type": "beer_brand",
+      "originCountry": "mexico"
+    },
+    {
+      "id": "patricia",
+      "name": "Patricia",
+      "type": "beer_brand",
+      "originCountry": "uruguay"
+    },
+    {
+      "id": "paulaner",
+      "name": "Paulaner",
+      "type": "beer_brand",
+      "originCountry": "germany"
+    },
+    {
+      "id": "petra_beer",
+      "name": "Petra",
+      "type": "beer_brand",
+      "originCountry": "jordan"
+    },
+    {
+      "id": "pilsen_paraguay",
+      "name": "Pilsen",
+      "type": "beer_brand",
+      "originCountry": "paraguay"
+    },
+    {
+      "id": "pilsener_ecuador",
+      "name": "Pilsener",
+      "type": "beer_brand",
+      "originCountry": "ecuador"
+    },
+    {
+      "id": "pilsner_urquell",
+      "name": "Pilsner Urquell",
+      "type": "beer_brand",
+      "originCountry": "czechia"
+    },
+    {
+      "id": "prestige",
+      "name": "Prestige",
+      "type": "beer_brand",
+      "originCountry": "haiti"
+    },
+    {
+      "id": "primus",
+      "name": "Primus",
+      "type": "beer_brand",
+      "originCountry": "dr_congo"
+    },
+    {
+      "id": "quilmes",
+      "name": "Quilmes",
+      "type": "beer_brand",
+      "originCountry": "argentina"
+    },
+    {
+      "id": "ringnes",
+      "name": "Ringnes",
+      "type": "beer_brand",
+      "originCountry": "norway"
+    },
+    {
+      "id": "sagres",
+      "name": "Sagres",
+      "type": "beer_brand",
+      "originCountry": "portugal"
+    },
+    {
+      "id": "sapporo",
+      "name": "Sapporo",
+      "type": "beer_brand",
+      "originCountry": "japan"
+    },
+    {
+      "id": "sarajevsko",
+      "name": "Sarajevsko",
+      "type": "beer_brand",
+      "originCountry": "bosnia_and_herzegovina"
+    },
+    {
+      "id": "schneider",
+      "name": "Schneider",
+      "type": "beer_brand",
+      "originCountry": "argentina"
+    },
+    {
+      "id": "skol",
+      "name": "Skol",
+      "type": "beer_brand",
+      "originCountry": "brazil"
+    },
+    {
+      "id": "speights",
+      "name": "Speight's",
+      "type": "beer_brand",
+      "originCountry": "new_zealand"
+    },
+    {
+      "id": "star_ghana",
+      "name": "Star Beer",
+      "type": "beer_brand",
+      "originCountry": "ghana"
+    },
+    {
+      "id": "staropramen",
+      "name": "Staropramen",
+      "type": "beer_brand",
+      "originCountry": "czechia"
+    },
+    {
+      "id": "steinlager",
+      "name": "Steinlager",
+      "type": "beer_brand",
+      "originCountry": "new_zealand"
+    },
+    {
+      "id": "stella_artois",
+      "name": "Stella Artois",
+      "type": "beer_brand",
+      "originCountry": "belgium"
+    },
+    {
+      "id": "stella_egypt",
+      "name": "Stella",
+      "type": "beer_brand",
+      "originCountry": "egypt"
+    },
+    {
+      "id": "stiegl",
+      "name": "Stiegl",
+      "type": "beer_brand",
+      "originCountry": "austria"
+    },
+    {
+      "id": "strela",
+      "name": "Strela",
+      "type": "beer_brand",
+      "originCountry": "cape_verde"
+    },
+    {
+      "id": "super_bock",
+      "name": "Super Bock",
+      "type": "beer_brand",
+      "originCountry": "portugal"
+    },
+    {
+      "id": "tango",
+      "name": "Tango",
+      "type": "beer_brand",
+      "originCountry": "algeria"
+    },
+    {
+      "id": "tennents",
+      "name": "Tennent's",
+      "type": "beer_brand",
+      "originCountry": "scotland"
+    },
+    {
+      "id": "victoria_bitter",
+      "name": "Victoria Bitter",
+      "type": "beer_brand",
+      "originCountry": "australia"
+    }
+  ]
+}

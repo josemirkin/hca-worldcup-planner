@@ -1,0 +1,90 @@
+{
+  "menuItems": [
+    {
+      "id": "generic_beer_bottle",
+      "name": "Beer Bottle",
+      "category": "drink",
+      "linkedDrinkId": "beer",
+      "unit": "bottle",
+      "size": "12oz",
+      "cost": null,
+      "sellPrice": null
+    },
+    {
+      "id": "fernet_coca",
+      "name": "Fernet con Coca",
+      "category": "drink",
+      "linkedDrinkId": "fernet",
+      "brandId": "fernet_branca",
+      "mixerBrandIds": [
+        "coca_cola"
+      ],
+      "unit": "cocktail",
+      "cost": null,
+      "sellPrice": null
+    },
+    {
+      "id": "caipirinha",
+      "name": "Caipirinha",
+      "category": "drink",
+      "linkedDrinkId": "caipirinha",
+      "unit": "cocktail",
+      "cost": null,
+      "sellPrice": null
+    },
+    {
+      "id": "michelada",
+      "name": "Michelada",
+      "category": "drink",
+      "linkedDrinkId": "michelada",
+      "unit": "cocktail",
+      "cost": null,
+      "sellPrice": null
+    },
+    {
+      "id": "burger",
+      "name": "Burger",
+      "category": "food",
+      "linkedFoodId": "burger",
+      "unit": "each",
+      "cost": null,
+      "sellPrice": null
+    },
+    {
+      "id": "fries",
+      "name": "Fries",
+      "category": "food",
+      "linkedFoodId": "fries",
+      "unit": "portion",
+      "cost": null,
+      "sellPrice": null
+    },
+    {
+      "id": "pizza_slice",
+      "name": "Pizza Slice",
+      "category": "food",
+      "linkedFoodId": "pizza",
+      "unit": "slice",
+      "cost": null,
+      "sellPrice": null
+    },
+    {
+      "id": "hot_dog",
+      "name": "Hot Dog",
+      "category": "food",
+      "linkedFoodId": "hot_dog",
+      "unit": "each",
+      "cost": null,
+      "sellPrice": null
+    },
+    {
+      "id": "wings",
+      "name": "Wings",
+      "category": "food",
+      "linkedFoodId": "wings",
+      "unit": "portion",
+      "cost": null,
+      "sellPrice": null
+    }
+  ]
+}

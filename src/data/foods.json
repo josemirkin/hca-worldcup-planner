@@ -1,0 +1,492 @@
+{
+  "foods": [
+    {
+      "id": "arepa",
+      "name": "Arepa",
+      "type": "corn_cake",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "attieke",
+      "name": "Attiéké",
+      "type": "cassava_dish",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "barbecue",
+      "name": "Barbecue",
+      "type": "grilled_meat",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "bento",
+      "name": "Bento",
+      "type": "meal_box",
+      "contexts": [
+        "stadium"
+      ]
+    },
+    {
+      "id": "brik",
+      "name": "Brik",
+      "type": "fried_pastry",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "burger",
+      "name": "Burger",
+      "type": "burger",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "ceviche",
+      "name": "Ceviche",
+      "type": "seafood",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "charcuterie",
+      "name": "Charcuterie",
+      "type": "cold_cuts",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "cheese_platter",
+      "name": "Cheese platter",
+      "type": "cheese",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "choripan",
+      "name": "Choripán",
+      "type": "sandwich",
+      "contexts": [
+        "stadium"
+      ]
+    },
+    {
+      "id": "couscous",
+      "name": "Couscous",
+      "type": "grain_dish",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "crepe",
+      "name": "Crêpe",
+      "type": "crepe",
+      "contexts": [
+        "stadium"
+      ]
+    },
+    {
+      "id": "croquettes",
+      "name": "Croquettes",
+      "type": "fried_snack",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "empanadas",
+      "name": "Empanadas",
+      "type": "pastry",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "falafel",
+      "name": "Falafel",
+      "type": "fried_legume",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "fondue",
+      "name": "Fondue",
+      "type": "cheese_dish",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "fried_cheese",
+      "name": "Fried cheese",
+      "type": "fried_cheese",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "fried_chicken",
+      "name": "Fried chicken",
+      "type": "fried_chicken",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "fried_food",
+      "name": "Fried foods",
+      "type": "fried_food",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "fried_plantain",
+      "name": "Fried plantain",
+      "type": "fried_plantain",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "fried_pork",
+      "name": "Fried pork",
+      "type": "fried_pork",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "fried_snack",
+      "name": "Fried snack",
+      "type": "fried_snack",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "fries",
+      "name": "Fries",
+      "type": "fried_potato",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "fufu",
+      "name": "Fufu",
+      "type": "starchy_side",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "grilled_fish",
+      "name": "Grilled fish",
+      "type": "seafood",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "grilled_meat",
+      "name": "Grilled meat",
+      "type": "grilled_meat",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "grilled_skewer",
+      "name": "Grilled skewer",
+      "type": "grilled_meat",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "hot_dog",
+      "name": "Hot dog",
+      "type": "stadium_fast_food",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "jollof_rice",
+      "name": "Jollof rice",
+      "type": "rice_dish",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "kabsa",
+      "name": "Kabsa",
+      "type": "rice_meat",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "kebab",
+      "name": "Kebab",
+      "type": "grilled_meat",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "koshari",
+      "name": "Koshari",
+      "type": "rice_pasta_lentils",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "lahmacun",
+      "name": "Lahmacun",
+      "type": "flatbread",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "mansaf",
+      "name": "Mansaf",
+      "type": "rice_lamb_yogurt",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "meat_pie",
+      "name": "Meat pie",
+      "type": "savory_pie",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "nachos",
+      "name": "Nachos",
+      "type": "snack",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "pie",
+      "name": "Pie",
+      "type": "savory_pie",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "pizza",
+      "name": "Pizza",
+      "type": "pizza",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "plov",
+      "name": "Plov",
+      "type": "rice_dish",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "poutine",
+      "name": "Poutine",
+      "type": "fries_gravy_cheese",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "pretzel",
+      "name": "Pretzel",
+      "type": "bread_snack",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "raclette",
+      "name": "Raclette",
+      "type": "cheese_dish",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "rice_beans",
+      "name": "Rice and beans",
+      "type": "rice_dish",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "rice_dish",
+      "name": "Rice dish",
+      "type": "rice_dish",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "sandwich",
+      "name": "Sandwich",
+      "type": "sandwich",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "sausage",
+      "name": "Sausage",
+      "type": "sausage",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "savory_pastry",
+      "name": "Savory pastry",
+      "type": "pastry",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "schnitzel",
+      "name": "Schnitzel",
+      "type": "fried_cutlet",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "shawarma",
+      "name": "Shawarma",
+      "type": "wrap",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "snack_platter",
+      "name": "Snack platter",
+      "type": "shared_snacks",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "sopa_paraguaya",
+      "name": "Sopa paraguaya",
+      "type": "cornbread",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "stew",
+      "name": "Stew",
+      "type": "stew",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "stir_fried_noodles",
+      "name": "Stir-fried noodles",
+      "type": "noodles",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "tacos",
+      "name": "Tacos",
+      "type": "street_food",
+      "contexts": [
+        "stadium",
+        "watch"
+      ]
+    },
+    {
+      "id": "tagine",
+      "name": "Tagine",
+      "type": "stew",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "tapas",
+      "name": "Tapas",
+      "type": "small_plates",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "tortilla",
+      "name": "Spanish tortilla",
+      "type": "egg_potato_dish",
+      "contexts": [
+        "watch"
+      ]
+    },
+    {
+      "id": "wings",
+      "name": "Wings",
+      "type": "chicken_wings",
+      "contexts": [
+        "watch"
+      ]
+    }
+  ]
+}

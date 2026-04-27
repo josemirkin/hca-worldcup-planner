@@ -1,0 +1,4283 @@
+{
+  "countries": [
+    {
+      "id": "algeria",
+      "name": "Algeria",
+      "flag": "🇩🇿",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "tea",
+            "percentage": 55
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 30
+          },
+          {
+            "id": "beer",
+            "percentage": 15
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "algerian_wine"
+          }
+        ],
+        "beer": {
+          "type": "restricted_lager",
+          "brands": [
+            "tango"
+          ],
+          "percentage": 15,
+          "note": "Alcohol is limited; beer is mostly private/social rather than public stadium culture."
+        },
+        "stadiumDrink": [
+          {
+            "id": "non_alcoholic_drinks",
+            "percentage": 100
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "tea",
+            "percentage": 55
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 30
+          },
+          {
+            "id": "beer",
+            "percentage": 15
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "sandwich",
+            "percentage": 40,
+            "localName": "Merguez sandwich"
+          },
+          {
+            "id": "fries",
+            "percentage": 35
+          },
+          {
+            "id": "grilled_skewer",
+            "percentage": 25,
+            "localName": "Brochettes"
+          }
+        ],
+        "watch": [
+          {
+            "id": "couscous",
+            "percentage": 35
+          },
+          {
+            "id": "grilled_meat",
+            "percentage": 35
+          },
+          {
+            "id": "savory_pastry",
+            "percentage": 30,
+            "localName": "Börek / bourek"
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "tea",
+        "beerId": "beer",
+        "signatureCountryFoodId": "couscous",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "argentina",
+      "name": "Argentina",
+      "flag": "🇦🇷",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 60
+          },
+          {
+            "id": "fernet",
+            "percentage": 40
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "malbec"
+          }
+        ],
+        "beer": {
+          "type": "light_lager",
+          "brands": [
+            "quilmes",
+            "brahma",
+            "schneider"
+          ],
+          "percentage": 60
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 95
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 60
+          },
+          {
+            "id": "fernet",
+            "percentage": 40
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "choripan",
+            "percentage": 60
+          },
+          {
+            "id": "burger",
+            "percentage": 25
+          },
+          {
+            "id": "fries",
+            "percentage": 15
+          }
+        ],
+        "watch": [
+          {
+            "id": "pizza",
+            "percentage": 40,
+            "note": "Argentine-style: thick, cheesy pizza"
+          },
+          {
+            "id": "empanadas",
+            "percentage": 35
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 25,
+            "localName": "Picada"
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "fernet",
+        "beerId": "beer",
+        "signatureCountryFoodId": "empanadas",
+        "genericFoodId": "burger",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "burger"
+        }
+      }
+    },
+    {
+      "id": "australia",
+      "name": "Australia",
+      "flag": "🇦🇺",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 70
+          },
+          {
+            "id": "rtd_spirits",
+            "percentage": 30
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "australian_beer"
+          }
+        ],
+        "beer": {
+          "type": "lager_pub_beer",
+          "brands": [
+            "victoria_bitter",
+            "carlton_draught"
+          ],
+          "percentage": 70
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 90
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "rtd_spirits",
+            "percentage": 25
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "meat_pie",
+            "percentage": 45
+          },
+          {
+            "id": "fries",
+            "percentage": 35,
+            "localName": "Hot chips"
+          },
+          {
+            "id": "schnitzel",
+            "percentage": 20
+          }
+        ],
+        "watch": [
+          {
+            "id": "meat_pie",
+            "percentage": 35
+          },
+          {
+            "id": "schnitzel",
+            "percentage": 40
+          },
+          {
+            "id": "fries",
+            "percentage": 25,
+            "localName": "Hot chips"
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "rtd_spirits",
+        "beerId": "beer",
+        "signatureCountryFoodId": "meat_pie",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "austria",
+      "name": "Austria",
+      "flag": "🇦🇹",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "wine",
+            "percentage": 25
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "austrian_beer"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "stiegl",
+            "gosser"
+          ],
+          "percentage": 75
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 90
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "wine",
+            "percentage": 25
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "sausage",
+            "percentage": 45,
+            "localName": "Würstel"
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          },
+          {
+            "id": "pretzel",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "schnitzel",
+            "percentage": 40
+          },
+          {
+            "id": "sausage",
+            "percentage": 30
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "wine",
+        "beerId": "beer",
+        "signatureCountryFoodId": "schnitzel",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "belgium",
+      "name": "Belgium",
+      "flag": "🇧🇪",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "wine",
+            "percentage": 25
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "belgian_beer"
+          }
+        ],
+        "beer": {
+          "type": "blond_ale_lager_specialty_beer",
+          "brands": [
+            "duvel",
+            "leffe",
+            "jupiler"
+          ],
+          "percentage": 75
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 85
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 80
+          },
+          {
+            "id": "wine",
+            "percentage": 20
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "fries",
+            "percentage": 55
+          },
+          {
+            "id": "fried_snack",
+            "percentage": 25,
+            "localName": "Frikandel / croquette"
+          },
+          {
+            "id": "burger",
+            "percentage": 20
+          }
+        ],
+        "watch": [
+          {
+            "id": "fries",
+            "percentage": 45
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 25,
+            "localName": "Cheese / charcuterie"
+          },
+          {
+            "id": "fried_snack",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "wine",
+        "beerId": "beer",
+        "signatureCountryFoodId": "fried_snack",
+        "genericFoodId": "burger",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "burger"
+        }
+      }
+    },
+    {
+      "id": "bosnia_and_herzegovina",
+      "name": "Bosnia and Herzegovina",
+      "flag": "🇧🇦",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 55
+          },
+          {
+            "id": "rakija",
+            "percentage": 45
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "rakija"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "sarajevsko"
+          ],
+          "percentage": 55
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 85
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 55
+          },
+          {
+            "id": "rakija",
+            "percentage": 45
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "grilled_meat",
+            "percentage": 50,
+            "localName": "Ćevapi"
+          },
+          {
+            "id": "fries",
+            "percentage": 25
+          },
+          {
+            "id": "sandwich",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "grilled_meat",
+            "percentage": 50,
+            "localName": "Ćevapi"
+          },
+          {
+            "id": "savory_pastry",
+            "percentage": 30,
+            "localName": "Burek"
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 20
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "rakija",
+        "beerId": "beer",
+        "signatureCountryFoodId": "grilled_meat",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "brazil",
+      "name": "Brazil",
+      "flag": "🇧🇷",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "caipirinha",
+            "percentage": 25
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "caipirinha"
+          }
+        ],
+        "beer": {
+          "type": "light_lager",
+          "brands": [
+            "skol",
+            "brahma",
+            "antarctica"
+          ],
+          "percentage": 75
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 90
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 70
+          },
+          {
+            "id": "caipirinha",
+            "percentage": 30
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "grilled_skewer",
+            "percentage": 40,
+            "localName": "Espetinho"
+          },
+          {
+            "id": "savory_pastry",
+            "percentage": 35,
+            "localName": "Coxinha / pastel"
+          },
+          {
+            "id": "burger",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "barbecue",
+            "percentage": 40,
+            "localName": "Churrasco"
+          },
+          {
+            "id": "savory_pastry",
+            "percentage": 30,
+            "localName": "Coxinha / pastel"
+          },
+          {
+            "id": "pizza",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "caipirinha",
+        "beerId": "beer",
+        "signatureCountryFoodId": "barbecue",
+        "genericFoodId": "burger",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "burger"
+        }
+      }
+    },
+    {
+      "id": "canada",
+      "name": "Canada",
+      "flag": "🇨🇦",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 70
+          },
+          {
+            "id": "caesar",
+            "percentage": 30
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "caesar"
+          }
+        ],
+        "beer": {
+          "type": "lager_craft_beer",
+          "brands": [
+            "molson",
+            "labatt"
+          ],
+          "percentage": 70
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 90
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "caesar",
+            "percentage": 25
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "hot_dog",
+            "percentage": 35
+          },
+          {
+            "id": "poutine",
+            "percentage": 35
+          },
+          {
+            "id": "burger",
+            "percentage": 30
+          }
+        ],
+        "watch": [
+          {
+            "id": "wings",
+            "percentage": 40
+          },
+          {
+            "id": "pizza",
+            "percentage": 35
+          },
+          {
+            "id": "poutine",
+            "percentage": 25
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "caesar",
+        "beerId": "beer",
+        "signatureCountryFoodId": "wings",
+        "genericFoodId": "burger",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "burger"
+        }
+      }
+    },
+    {
+      "id": "cape_verde",
+      "name": "Cape Verde",
+      "flag": "🇨🇻",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 60
+          },
+          {
+            "id": "grogue",
+            "percentage": 40
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "grogue"
+          }
+        ],
+        "beer": {
+          "type": "light_lager",
+          "brands": [
+            "strela"
+          ],
+          "percentage": 60
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 85
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 60
+          },
+          {
+            "id": "grogue",
+            "percentage": 40
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "grilled_skewer",
+            "percentage": 40
+          },
+          {
+            "id": "sandwich",
+            "percentage": 35
+          },
+          {
+            "id": "fries",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "stew",
+            "percentage": 40,
+            "localName": "Cachupa"
+          },
+          {
+            "id": "grilled_fish",
+            "percentage": 35
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 25
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "grogue",
+        "beerId": "beer",
+        "signatureCountryFoodId": "stew",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "colombia",
+      "name": "Colombia",
+      "flag": "🇨🇴",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 60
+          },
+          {
+            "id": "aguardiente",
+            "percentage": 40
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "aguardiente"
+          }
+        ],
+        "beer": {
+          "type": "light_lager",
+          "brands": [
+            "aguila",
+            "club_colombia"
+          ],
+          "percentage": 60
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 90
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 60
+          },
+          {
+            "id": "aguardiente",
+            "percentage": 40
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "arepa",
+            "percentage": 40
+          },
+          {
+            "id": "empanadas",
+            "percentage": 35
+          },
+          {
+            "id": "hot_dog",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "arepa",
+            "percentage": 35
+          },
+          {
+            "id": "empanadas",
+            "percentage": 35
+          },
+          {
+            "id": "grilled_meat",
+            "percentage": 30,
+            "localName": "Picada / asado"
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "aguardiente",
+        "beerId": "beer",
+        "signatureCountryFoodId": "arepa",
+        "genericFoodId": "hot_dog",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "hot_dog"
+        }
+      }
+    },
+    {
+      "id": "croatia",
+      "name": "Croatia",
+      "flag": "🇭🇷",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 65
+          },
+          {
+            "id": "rakija",
+            "percentage": 35
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "rakija"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "karlovacko",
+            "ozujsko"
+          ],
+          "percentage": 65
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 85
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 65
+          },
+          {
+            "id": "rakija",
+            "percentage": 35
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "sausage",
+            "percentage": 35
+          },
+          {
+            "id": "burger",
+            "percentage": 30
+          },
+          {
+            "id": "fries",
+            "percentage": 35
+          }
+        ],
+        "watch": [
+          {
+            "id": "grilled_meat",
+            "percentage": 40,
+            "localName": "Ćevapi / mixed grill"
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 35
+          },
+          {
+            "id": "savory_pastry",
+            "percentage": 25,
+            "localName": "Burek"
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "rakija",
+        "beerId": "beer",
+        "signatureCountryFoodId": "grilled_meat",
+        "genericFoodId": "burger",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "burger"
+        }
+      }
+    },
+    {
+      "id": "curacao",
+      "name": "Curaçao",
+      "flag": "🇨🇼",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 60
+          },
+          {
+            "id": "rum_drinks",
+            "percentage": 40
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "blue_curacao"
+          }
+        ],
+        "beer": {
+          "type": "light_lager",
+          "brands": [
+            "amstel_bright"
+          ],
+          "percentage": 60
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 85
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 60
+          },
+          {
+            "id": "rum_drinks",
+            "percentage": 40
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "fries",
+            "percentage": 35
+          },
+          {
+            "id": "burger",
+            "percentage": 35
+          },
+          {
+            "id": "grilled_skewer",
+            "percentage": 30
+          }
+        ],
+        "watch": [
+          {
+            "id": "stew",
+            "percentage": 35,
+            "localName": "Kabritu / local stews"
+          },
+          {
+            "id": "grilled_fish",
+            "percentage": 35
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "rum_drinks",
+        "beerId": "beer",
+        "signatureCountryFoodId": "stew",
+        "genericFoodId": "burger",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "burger"
+        }
+      }
+    },
+    {
+      "id": "czechia",
+      "name": "Czechia",
+      "flag": "🇨🇿",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 85
+          },
+          {
+            "id": "wine",
+            "percentage": 15
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "pilsner"
+          }
+        ],
+        "beer": {
+          "type": "pilsner",
+          "brands": [
+            "pilsner_urquell",
+            "staropramen"
+          ],
+          "percentage": 85
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 95
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 85
+          },
+          {
+            "id": "wine",
+            "percentage": 15
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "sausage",
+            "percentage": 45,
+            "localName": "Klobása"
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          },
+          {
+            "id": "pretzel",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "sausage",
+            "percentage": 35
+          },
+          {
+            "id": "fried_cheese",
+            "percentage": 35,
+            "localName": "Smažený sýr"
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "wine",
+        "beerId": "beer",
+        "signatureCountryFoodId": "sausage",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "dr_congo",
+      "name": "DR Congo",
+      "flag": "🇨🇩",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "palm_wine",
+            "percentage": 25
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "primus_beer"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "primus",
+            "skol"
+          ],
+          "percentage": 75
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 90
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "palm_wine",
+            "percentage": 25
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "grilled_skewer",
+            "percentage": 40
+          },
+          {
+            "id": "sandwich",
+            "percentage": 30
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          }
+        ],
+        "watch": [
+          {
+            "id": "grilled_meat",
+            "percentage": 40
+          },
+          {
+            "id": "fufu",
+            "percentage": 30
+          },
+          {
+            "id": "stew",
+            "percentage": 30,
+            "localName": "Moambe / stew"
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "palm_wine",
+        "beerId": "beer",
+        "signatureCountryFoodId": "grilled_meat",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "ecuador",
+      "name": "Ecuador",
+      "flag": "🇪🇨",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 70
+          },
+          {
+            "id": "aguardiente",
+            "percentage": 30
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "canelazo"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "pilsener_ecuador",
+            "club_ecuador"
+          ],
+          "percentage": 70
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 90
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 70
+          },
+          {
+            "id": "aguardiente",
+            "percentage": 30
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "empanadas",
+            "percentage": 35
+          },
+          {
+            "id": "burger",
+            "percentage": 30
+          },
+          {
+            "id": "fries",
+            "percentage": 35
+          }
+        ],
+        "watch": [
+          {
+            "id": "ceviche",
+            "percentage": 35
+          },
+          {
+            "id": "empanadas",
+            "percentage": 35
+          },
+          {
+            "id": "grilled_meat",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "aguardiente",
+        "beerId": "beer",
+        "signatureCountryFoodId": "ceviche",
+        "genericFoodId": "burger",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "burger"
+        }
+      }
+    },
+    {
+      "id": "egypt",
+      "name": "Egypt",
+      "flag": "🇪🇬",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "tea",
+            "percentage": 50
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 35
+          },
+          {
+            "id": "beer",
+            "percentage": 15
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "egyptian_beer"
+          }
+        ],
+        "beer": {
+          "type": "restricted_lager",
+          "brands": [
+            "stella_egypt"
+          ],
+          "percentage": 15,
+          "note": "Alcohol exists but is not normal stadium culture."
+        },
+        "stadiumDrink": [
+          {
+            "id": "non_alcoholic_drinks",
+            "percentage": 100
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "tea",
+            "percentage": 50
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 35
+          },
+          {
+            "id": "beer",
+            "percentage": 15
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "sandwich",
+            "percentage": 45,
+            "localName": "Kofta / hawawshi-style sandwiches"
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          },
+          {
+            "id": "falafel",
+            "percentage": 25,
+            "localName": "Ta'ameya"
+          }
+        ],
+        "watch": [
+          {
+            "id": "koshari",
+            "percentage": 35
+          },
+          {
+            "id": "grilled_meat",
+            "percentage": 35
+          },
+          {
+            "id": "falafel",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "tea",
+        "beerId": "beer",
+        "signatureCountryFoodId": "koshari",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "england",
+      "name": "England",
+      "flag": "🏴",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 80
+          },
+          {
+            "id": "cider",
+            "percentage": 20
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "ale"
+          }
+        ],
+        "beer": {
+          "type": "lager_ale",
+          "brands": [
+            "carling",
+            "stella_artois",
+            "guinness"
+          ],
+          "percentage": 80
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 90
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 80
+          },
+          {
+            "id": "cider",
+            "percentage": 20
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "pie",
+            "percentage": 40
+          },
+          {
+            "id": "burger",
+            "percentage": 30
+          },
+          {
+            "id": "fries",
+            "percentage": 30,
+            "localName": "Chips"
+          }
+        ],
+        "watch": [
+          {
+            "id": "wings",
+            "percentage": 35
+          },
+          {
+            "id": "pizza",
+            "percentage": 35
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "cider",
+        "beerId": "beer",
+        "signatureCountryFoodId": "wings",
+        "genericFoodId": "burger",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "burger"
+        }
+      }
+    },
+    {
+      "id": "france",
+      "name": "France",
+      "flag": "🇫🇷",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "wine",
+            "percentage": 55
+          },
+          {
+            "id": "beer",
+            "percentage": 45
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "french_wine"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "kronenbourg",
+            "1664"
+          ],
+          "percentage": 45
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 80
+          },
+          {
+            "id": "wine",
+            "percentage": 20
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 50
+          },
+          {
+            "id": "wine",
+            "percentage": 50
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "sandwich",
+            "percentage": 40,
+            "localName": "Baguette sandwich"
+          },
+          {
+            "id": "fries",
+            "percentage": 35
+          },
+          {
+            "id": "crepe",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "charcuterie",
+            "percentage": 40
+          },
+          {
+            "id": "cheese_platter",
+            "percentage": 35
+          },
+          {
+            "id": "pizza",
+            "percentage": 25
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "wine",
+        "beerId": "beer",
+        "signatureCountryFoodId": "charcuterie",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "germany",
+      "name": "Germany",
+      "flag": "🇩🇪",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 80
+          },
+          {
+            "id": "wine",
+            "percentage": 20
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "german_beer"
+          }
+        ],
+        "beer": {
+          "type": "pilsner_wheat_beer",
+          "brands": [
+            "becks",
+            "paulaner",
+            "bitburger"
+          ],
+          "percentage": 80
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 90
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 80
+          },
+          {
+            "id": "wine",
+            "percentage": 20
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "sausage",
+            "percentage": 55,
+            "localName": "Bratwurst"
+          },
+          {
+            "id": "fries",
+            "percentage": 25
+          },
+          {
+            "id": "pretzel",
+            "percentage": 20
+          }
+        ],
+        "watch": [
+          {
+            "id": "sausage",
+            "percentage": 40,
+            "localName": "Bratwurst / Currywurst"
+          },
+          {
+            "id": "pretzel",
+            "percentage": 30
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "wine",
+        "beerId": "beer",
+        "signatureCountryFoodId": "sausage",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "ghana",
+      "name": "Ghana",
+      "flag": "🇬🇭",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 70
+          },
+          {
+            "id": "palm_wine",
+            "percentage": 30
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "palm_wine"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "star_ghana",
+            "club_ghana"
+          ],
+          "percentage": 70
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 85
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 70
+          },
+          {
+            "id": "palm_wine",
+            "percentage": 30
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "grilled_skewer",
+            "percentage": 40,
+            "localName": "Kebab"
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          },
+          {
+            "id": "meat_pie",
+            "percentage": 30
+          }
+        ],
+        "watch": [
+          {
+            "id": "jollof_rice",
+            "percentage": 40
+          },
+          {
+            "id": "grilled_meat",
+            "percentage": 35
+          },
+          {
+            "id": "fried_plantain",
+            "percentage": 25
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "palm_wine",
+        "beerId": "beer",
+        "signatureCountryFoodId": "jollof_rice",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "haiti",
+      "name": "Haiti",
+      "flag": "🇭🇹",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 55
+          },
+          {
+            "id": "rum",
+            "percentage": 45
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "rhum_barbancourt"
+          }
+        ],
+        "beer": {
+          "type": "light_lager",
+          "brands": [
+            "prestige"
+          ],
+          "percentage": 55
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 85
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 55
+          },
+          {
+            "id": "rum",
+            "percentage": 45
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "fried_pork",
+            "percentage": 40,
+            "localName": "Griot"
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          },
+          {
+            "id": "sandwich",
+            "percentage": 30
+          }
+        ],
+        "watch": [
+          {
+            "id": "fried_pork",
+            "percentage": 40,
+            "localName": "Griot"
+          },
+          {
+            "id": "fried_plantain",
+            "percentage": 30
+          },
+          {
+            "id": "rice_beans",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "rum",
+        "beerId": "beer",
+        "signatureCountryFoodId": "fried_pork",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "iran",
+      "name": "Iran",
+      "flag": "🇮🇷",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "tea",
+            "percentage": 70
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 30
+          }
+        ],
+        "knownFor": [],
+        "beer": {
+          "type": "not_permitted",
+          "brands": [],
+          "percentage": 0,
+          "note": "Alcohol is banned; dataset uses non-alcoholic matchday behavior."
+        },
+        "stadiumDrink": [
+          {
+            "id": "non_alcoholic_drinks",
+            "percentage": 100
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "tea",
+            "percentage": 70
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 30
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "sandwich",
+            "percentage": 45,
+            "localName": "Kebab sandwich"
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          },
+          {
+            "id": "grilled_skewer",
+            "percentage": 25,
+            "localName": "Kebab"
+          }
+        ],
+        "watch": [
+          {
+            "id": "grilled_meat",
+            "percentage": 45,
+            "localName": "Kebab"
+          },
+          {
+            "id": "rice_dish",
+            "percentage": 35,
+            "localName": "Rice dishes"
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 20
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "tea",
+        "beerId": "beer",
+        "signatureCountryFoodId": "grilled_meat",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "iraq",
+      "name": "Iraq",
+      "flag": "🇮🇶",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "tea",
+            "percentage": 55
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 30
+          },
+          {
+            "id": "beer",
+            "percentage": 15
+          }
+        ],
+        "knownFor": [],
+        "beer": {
+          "type": "limited",
+          "brands": [],
+          "percentage": 15,
+          "note": "Alcohol availability varies and is not normal stadium culture."
+        },
+        "stadiumDrink": [
+          {
+            "id": "non_alcoholic_drinks",
+            "percentage": 100
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "tea",
+            "percentage": 55
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 30
+          },
+          {
+            "id": "beer",
+            "percentage": 15
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "sandwich",
+            "percentage": 45,
+            "localName": "Kebab sandwich"
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          },
+          {
+            "id": "grilled_skewer",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "grilled_meat",
+            "percentage": 45,
+            "localName": "Kebab"
+          },
+          {
+            "id": "rice_dish",
+            "percentage": 35
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 20
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "tea",
+        "beerId": "beer",
+        "signatureCountryFoodId": "grilled_meat",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "ivory_coast",
+      "name": "Ivory Coast",
+      "flag": "🇨🇮",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 70
+          },
+          {
+            "id": "palm_wine",
+            "percentage": 30
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "palm_wine"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "bock_ivory_coast"
+          ],
+          "percentage": 70
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 85
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 70
+          },
+          {
+            "id": "palm_wine",
+            "percentage": 30
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "grilled_skewer",
+            "percentage": 40,
+            "localName": "Brochettes"
+          },
+          {
+            "id": "sandwich",
+            "percentage": 30
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          }
+        ],
+        "watch": [
+          {
+            "id": "attieke",
+            "percentage": 35
+          },
+          {
+            "id": "grilled_fish",
+            "percentage": 35
+          },
+          {
+            "id": "grilled_meat",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "palm_wine",
+        "beerId": "beer",
+        "signatureCountryFoodId": "attieke",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "japan",
+      "name": "Japan",
+      "flag": "🇯🇵",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 65
+          },
+          {
+            "id": "highball",
+            "percentage": 20
+          },
+          {
+            "id": "sake",
+            "percentage": 15
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "sake"
+          }
+        ],
+        "beer": {
+          "type": "crisp_lager",
+          "brands": [
+            "asahi",
+            "kirin",
+            "sapporo"
+          ],
+          "percentage": 65
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 80
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 60
+          },
+          {
+            "id": "highball",
+            "percentage": 25
+          },
+          {
+            "id": "sake",
+            "percentage": 15
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "fried_chicken",
+            "percentage": 35,
+            "localName": "Karaage"
+          },
+          {
+            "id": "stir_fried_noodles",
+            "percentage": 35,
+            "localName": "Yakisoba"
+          },
+          {
+            "id": "bento",
+            "percentage": 30
+          }
+        ],
+        "watch": [
+          {
+            "id": "fried_chicken",
+            "percentage": 35,
+            "localName": "Karaage"
+          },
+          {
+            "id": "grilled_skewer",
+            "percentage": 30,
+            "localName": "Yakitori"
+          },
+          {
+            "id": "stir_fried_noodles",
+            "percentage": 35,
+            "localName": "Yakisoba"
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "highball",
+        "beerId": "beer",
+        "signatureCountryFoodId": "fried_chicken",
+        "genericFoodId": "burger",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "burger"
+        }
+      }
+    },
+    {
+      "id": "jordan",
+      "name": "Jordan",
+      "flag": "🇯🇴",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "tea",
+            "percentage": 45
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 35
+          },
+          {
+            "id": "arak",
+            "percentage": 20
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "arak"
+          }
+        ],
+        "beer": {
+          "type": "limited_lager",
+          "brands": [
+            "petra_beer"
+          ],
+          "percentage": 20,
+          "note": "Alcohol is legal but not a typical stadium drink."
+        },
+        "stadiumDrink": [
+          {
+            "id": "non_alcoholic_drinks",
+            "percentage": 100
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "tea",
+            "percentage": 45
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 35
+          },
+          {
+            "id": "arak",
+            "percentage": 20
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "shawarma",
+            "percentage": 45
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          },
+          {
+            "id": "falafel",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "mansaf",
+            "percentage": 35
+          },
+          {
+            "id": "grilled_meat",
+            "percentage": 35,
+            "localName": "Kebab / mixed grill"
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "arak",
+        "beerId": "beer",
+        "signatureCountryFoodId": "mansaf",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "mexico",
+      "name": "Mexico",
+      "flag": "🇲🇽",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 55
+          },
+          {
+            "id": "michelada",
+            "percentage": 45
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "tequila"
+          }
+        ],
+        "beer": {
+          "type": "light_lager",
+          "brands": [
+            "corona",
+            "modelo",
+            "pacifico"
+          ],
+          "percentage": 55
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 90
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 55
+          },
+          {
+            "id": "michelada",
+            "percentage": 45
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "tacos",
+            "percentage": 40
+          },
+          {
+            "id": "hot_dog",
+            "percentage": 30
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          }
+        ],
+        "watch": [
+          {
+            "id": "tacos",
+            "percentage": 45
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 30,
+            "localName": "Botana"
+          },
+          {
+            "id": "pizza",
+            "percentage": 25
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "michelada",
+        "beerId": "beer",
+        "signatureCountryFoodId": "tacos",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "morocco",
+      "name": "Morocco",
+      "flag": "🇲🇦",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "mint_tea",
+            "percentage": 60
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 25
+          },
+          {
+            "id": "beer",
+            "percentage": 15
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "moroccan_wine"
+          }
+        ],
+        "beer": {
+          "type": "limited_lager",
+          "brands": [
+            "casablanca_beer"
+          ],
+          "percentage": 15,
+          "note": "Alcohol is available but not normal stadium behavior."
+        },
+        "stadiumDrink": [
+          {
+            "id": "non_alcoholic_drinks",
+            "percentage": 100
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "mint_tea",
+            "percentage": 60
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 25
+          },
+          {
+            "id": "beer",
+            "percentage": 15
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "sandwich",
+            "percentage": 45,
+            "localName": "Kefta / merguez sandwich"
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          },
+          {
+            "id": "grilled_skewer",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "tagine",
+            "percentage": 35
+          },
+          {
+            "id": "couscous",
+            "percentage": 35
+          },
+          {
+            "id": "grilled_meat",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "mint_tea",
+        "beerId": "beer",
+        "signatureCountryFoodId": "tagine",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "netherlands",
+      "name": "Netherlands",
+      "flag": "🇳🇱",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 80
+          },
+          {
+            "id": "jenever",
+            "percentage": 20
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "jenever"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "heineken",
+            "amstel"
+          ],
+          "percentage": 80
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 90
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 80
+          },
+          {
+            "id": "jenever",
+            "percentage": 20
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "fries",
+            "percentage": 45
+          },
+          {
+            "id": "fried_snack",
+            "percentage": 35,
+            "localName": "Bitterballen / kroket"
+          },
+          {
+            "id": "burger",
+            "percentage": 20
+          }
+        ],
+        "watch": [
+          {
+            "id": "fried_snack",
+            "percentage": 40,
+            "localName": "Bitterballen"
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "jenever",
+        "beerId": "beer",
+        "signatureCountryFoodId": "fried_snack",
+        "genericFoodId": "burger",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "burger"
+        }
+      }
+    },
+    {
+      "id": "new_zealand",
+      "name": "New Zealand",
+      "flag": "🇳🇿",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 70
+          },
+          {
+            "id": "wine",
+            "percentage": 30
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "sauvignon_blanc"
+          }
+        ],
+        "beer": {
+          "type": "lager_craft_beer",
+          "brands": [
+            "steinlager",
+            "speights"
+          ],
+          "percentage": 70
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 85
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 70
+          },
+          {
+            "id": "wine",
+            "percentage": 30
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "meat_pie",
+            "percentage": 40
+          },
+          {
+            "id": "fries",
+            "percentage": 35,
+            "localName": "Chips"
+          },
+          {
+            "id": "burger",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "meat_pie",
+            "percentage": 35
+          },
+          {
+            "id": "barbecue",
+            "percentage": 35
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "wine",
+        "beerId": "beer",
+        "signatureCountryFoodId": "meat_pie",
+        "genericFoodId": "burger",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "burger"
+        }
+      }
+    },
+    {
+      "id": "norway",
+      "name": "Norway",
+      "flag": "🇳🇴",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "aquavit",
+            "percentage": 25
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "aquavit"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "ringnes",
+            "hansa"
+          ],
+          "percentage": 75
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 85
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "aquavit",
+            "percentage": 25
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "hot_dog",
+            "percentage": 45,
+            "localName": "Pølse"
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          },
+          {
+            "id": "burger",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "hot_dog",
+            "percentage": 35,
+            "localName": "Pølse"
+          },
+          {
+            "id": "pizza",
+            "percentage": 35
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "aquavit",
+        "beerId": "beer",
+        "signatureCountryFoodId": "hot_dog",
+        "genericFoodId": "burger",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "burger"
+        }
+      }
+    },
+    {
+      "id": "panama",
+      "name": "Panama",
+      "flag": "🇵🇦",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 70
+          },
+          {
+            "id": "seco",
+            "percentage": 30
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "seco"
+          }
+        ],
+        "beer": {
+          "type": "light_lager",
+          "brands": [
+            "balboa",
+            "atlas"
+          ],
+          "percentage": 70
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 90
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 70
+          },
+          {
+            "id": "seco",
+            "percentage": 30
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "empanadas",
+            "percentage": 35
+          },
+          {
+            "id": "hot_dog",
+            "percentage": 30
+          },
+          {
+            "id": "fries",
+            "percentage": 35
+          }
+        ],
+        "watch": [
+          {
+            "id": "fried_food",
+            "percentage": 35,
+            "localName": "Frituras"
+          },
+          {
+            "id": "ceviche",
+            "percentage": 35
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "seco",
+        "beerId": "beer",
+        "signatureCountryFoodId": "fried_food",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "paraguay",
+      "name": "Paraguay",
+      "flag": "🇵🇾",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "cana",
+            "percentage": 25
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "cana"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "pilsen_paraguay"
+          ],
+          "percentage": 75
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 90
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "cana",
+            "percentage": 25
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "empanadas",
+            "percentage": 35
+          },
+          {
+            "id": "sandwich",
+            "percentage": 35,
+            "localName": "Lomito / sandwich"
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          }
+        ],
+        "watch": [
+          {
+            "id": "sopa_paraguaya",
+            "percentage": 35
+          },
+          {
+            "id": "empanadas",
+            "percentage": 35
+          },
+          {
+            "id": "grilled_meat",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "cana",
+        "beerId": "beer",
+        "signatureCountryFoodId": "sopa_paraguaya",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "portugal",
+      "name": "Portugal",
+      "flag": "🇵🇹",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 70
+          },
+          {
+            "id": "wine",
+            "percentage": 30
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "port_wine"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "super_bock",
+            "sagres"
+          ],
+          "percentage": 70
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 90
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 70
+          },
+          {
+            "id": "wine",
+            "percentage": 30
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "sandwich",
+            "percentage": 45,
+            "localName": "Bifana"
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          },
+          {
+            "id": "hot_dog",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "sandwich",
+            "percentage": 35,
+            "localName": "Bifana"
+          },
+          {
+            "id": "grilled_meat",
+            "percentage": 35
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "wine",
+        "beerId": "beer",
+        "signatureCountryFoodId": "sandwich",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "qatar",
+      "name": "Qatar",
+      "flag": "🇶🇦",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "tea",
+            "percentage": 45
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 40
+          },
+          {
+            "id": "non_alcoholic_beer",
+            "percentage": 15
+          }
+        ],
+        "knownFor": [],
+        "beer": {
+          "type": "restricted",
+          "brands": [],
+          "percentage": 0,
+          "note": "Alcohol is restricted; beer is not a normal local matchday drink."
+        },
+        "stadiumDrink": [
+          {
+            "id": "non_alcoholic_drinks",
+            "percentage": 100
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "tea",
+            "percentage": 45
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 40
+          },
+          {
+            "id": "non_alcoholic_beer",
+            "percentage": 15
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "shawarma",
+            "percentage": 40
+          },
+          {
+            "id": "burger",
+            "percentage": 35
+          },
+          {
+            "id": "fries",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "shawarma",
+            "percentage": 35
+          },
+          {
+            "id": "grilled_meat",
+            "percentage": 35,
+            "localName": "Kebab / mixed grill"
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "tea",
+        "beerId": "beer",
+        "signatureCountryFoodId": "shawarma",
+        "genericFoodId": "burger",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "burger"
+        }
+      }
+    },
+    {
+      "id": "saudi_arabia",
+      "name": "Saudi Arabia",
+      "flag": "🇸🇦",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "arabic_coffee",
+            "percentage": 45
+          },
+          {
+            "id": "tea",
+            "percentage": 35
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 20
+          }
+        ],
+        "knownFor": [],
+        "beer": {
+          "type": "not_permitted",
+          "brands": [],
+          "percentage": 0,
+          "note": "Alcohol is banned; dataset uses non-alcoholic matchday behavior."
+        },
+        "stadiumDrink": [
+          {
+            "id": "non_alcoholic_drinks",
+            "percentage": 100
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "arabic_coffee",
+            "percentage": 45
+          },
+          {
+            "id": "tea",
+            "percentage": 35
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 20
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "shawarma",
+            "percentage": 40
+          },
+          {
+            "id": "burger",
+            "percentage": 35
+          },
+          {
+            "id": "fries",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "kabsa",
+            "percentage": 40
+          },
+          {
+            "id": "grilled_meat",
+            "percentage": 35
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 25
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "arabic_coffee",
+        "beerId": "beer",
+        "signatureCountryFoodId": "kabsa",
+        "genericFoodId": "burger",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "burger"
+        }
+      }
+    },
+    {
+      "id": "scotland",
+      "name": "Scotland",
+      "flag": "🏴",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "whisky",
+            "percentage": 25
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "scotch_whisky"
+          }
+        ],
+        "beer": {
+          "type": "lager_ale",
+          "brands": [
+            "tennents",
+            "belhaven"
+          ],
+          "percentage": 75
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 90
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "whisky",
+            "percentage": 25
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "pie",
+            "percentage": 45,
+            "localName": "Scotch pie"
+          },
+          {
+            "id": "fries",
+            "percentage": 30,
+            "localName": "Chips"
+          },
+          {
+            "id": "burger",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "pie",
+            "percentage": 35
+          },
+          {
+            "id": "pizza",
+            "percentage": 35
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "whisky",
+        "beerId": "beer",
+        "signatureCountryFoodId": "pie",
+        "genericFoodId": "burger",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "burger"
+        }
+      }
+    },
+    {
+      "id": "senegal",
+      "name": "Senegal",
+      "flag": "🇸🇳",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 60
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 40
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "senegalese_beer"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "gazelle",
+            "flag"
+          ],
+          "percentage": 60
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 25
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 60
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 40
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "grilled_skewer",
+            "percentage": 40,
+            "localName": "Dibi"
+          },
+          {
+            "id": "sandwich",
+            "percentage": 30
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          }
+        ],
+        "watch": [
+          {
+            "id": "rice_dish",
+            "percentage": 45,
+            "localName": "Thieboudienne"
+          },
+          {
+            "id": "grilled_meat",
+            "percentage": 35,
+            "localName": "Dibi"
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 20
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "beer",
+        "beerId": "beer",
+        "signatureCountryFoodId": "rice_dish",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "south_africa",
+      "name": "South Africa",
+      "flag": "🇿🇦",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "wine",
+            "percentage": 25
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "pinotage"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "castle_lager",
+            "carling_black_label"
+          ],
+          "percentage": 75
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 90
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "wine",
+            "percentage": 25
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "sausage",
+            "percentage": 45,
+            "localName": "Boerewors roll"
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          },
+          {
+            "id": "burger",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "barbecue",
+            "percentage": 45,
+            "localName": "Braai"
+          },
+          {
+            "id": "sausage",
+            "percentage": 30,
+            "localName": "Boerewors"
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 25
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "wine",
+        "beerId": "beer",
+        "signatureCountryFoodId": "barbecue",
+        "genericFoodId": "burger",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "burger"
+        }
+      }
+    },
+    {
+      "id": "south_korea",
+      "name": "South Korea",
+      "flag": "🇰🇷",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "soju",
+            "percentage": 45
+          },
+          {
+            "id": "beer",
+            "percentage": 40
+          },
+          {
+            "id": "somaek",
+            "percentage": 15
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "soju"
+          }
+        ],
+        "beer": {
+          "type": "light_lager",
+          "brands": [
+            "cass",
+            "hite"
+          ],
+          "percentage": 40
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 80
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "soju",
+            "percentage": 45
+          },
+          {
+            "id": "beer",
+            "percentage": 40
+          },
+          {
+            "id": "somaek",
+            "percentage": 15
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "fried_chicken",
+            "percentage": 45,
+            "localName": "Chimaek chicken"
+          },
+          {
+            "id": "stir_fried_noodles",
+            "percentage": 25
+          },
+          {
+            "id": "hot_dog",
+            "percentage": 30,
+            "localName": "Korean-style hot dog"
+          }
+        ],
+        "watch": [
+          {
+            "id": "fried_chicken",
+            "percentage": 45
+          },
+          {
+            "id": "barbecue",
+            "percentage": 35,
+            "localName": "Korean BBQ"
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 20
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "soju",
+        "beerId": "beer",
+        "signatureCountryFoodId": "fried_chicken",
+        "genericFoodId": "hot_dog",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "hot_dog"
+        }
+      }
+    },
+    {
+      "id": "spain",
+      "name": "Spain",
+      "flag": "🇪🇸",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 70
+          },
+          {
+            "id": "tinto_de_verano",
+            "percentage": 30
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "sangria"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "estrella_damm",
+            "mahou"
+          ],
+          "percentage": 70
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 90
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 70
+          },
+          {
+            "id": "tinto_de_verano",
+            "percentage": 30
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "sandwich",
+            "percentage": 40,
+            "localName": "Bocadillo"
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          },
+          {
+            "id": "croquettes",
+            "percentage": 30,
+            "localName": "Croquetas"
+          }
+        ],
+        "watch": [
+          {
+            "id": "tapas",
+            "percentage": 45
+          },
+          {
+            "id": "tortilla",
+            "percentage": 30
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 25
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "tinto_de_verano",
+        "beerId": "beer",
+        "signatureCountryFoodId": "tapas",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "sweden",
+      "name": "Sweden",
+      "flag": "🇸🇪",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "aquavit",
+            "percentage": 25
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "aquavit"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "falcon",
+            "carlsberg"
+          ],
+          "percentage": 75
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 85
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "aquavit",
+            "percentage": 25
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "hot_dog",
+            "percentage": 45,
+            "localName": "Korv"
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          },
+          {
+            "id": "burger",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "pizza",
+            "percentage": 35
+          },
+          {
+            "id": "hot_dog",
+            "percentage": 35,
+            "localName": "Korv"
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "aquavit",
+        "beerId": "beer",
+        "signatureCountryFoodId": "pizza",
+        "genericFoodId": "burger",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "burger"
+        }
+      }
+    },
+    {
+      "id": "switzerland",
+      "name": "Switzerland",
+      "flag": "🇨🇭",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 65
+          },
+          {
+            "id": "wine",
+            "percentage": 35
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "swiss_wine"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "feldschlosschen"
+          ],
+          "percentage": 65
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 85
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 65
+          },
+          {
+            "id": "wine",
+            "percentage": 35
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "sausage",
+            "percentage": 40,
+            "localName": "Bratwurst"
+          },
+          {
+            "id": "fries",
+            "percentage": 35
+          },
+          {
+            "id": "sandwich",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "fondue",
+            "percentage": 30
+          },
+          {
+            "id": "raclette",
+            "percentage": 35
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 35
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "wine",
+        "beerId": "beer",
+        "signatureCountryFoodId": "fondue",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "tunisia",
+      "name": "Tunisia",
+      "flag": "🇹🇳",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 60
+          },
+          {
+            "id": "boukha",
+            "percentage": 40
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "boukha"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "celtia"
+          ],
+          "percentage": 60
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "soft_drinks",
+            "percentage": 25
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 60
+          },
+          {
+            "id": "boukha",
+            "percentage": 40
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "sandwich",
+            "percentage": 40,
+            "localName": "Merguez / tuna sandwich"
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          },
+          {
+            "id": "brik",
+            "percentage": 30
+          }
+        ],
+        "watch": [
+          {
+            "id": "brik",
+            "percentage": 35
+          },
+          {
+            "id": "couscous",
+            "percentage": 35
+          },
+          {
+            "id": "grilled_meat",
+            "percentage": 30
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "boukha",
+        "beerId": "beer",
+        "signatureCountryFoodId": "brik",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "turkiye",
+      "name": "Türkiye",
+      "flag": "🇹🇷",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 60
+          },
+          {
+            "id": "raki",
+            "percentage": 40
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "raki"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "efes"
+          ],
+          "percentage": 60
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 85
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 60
+          },
+          {
+            "id": "raki",
+            "percentage": 40
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "sandwich",
+            "percentage": 40,
+            "localName": "Döner"
+          },
+          {
+            "id": "fries",
+            "percentage": 30
+          },
+          {
+            "id": "grilled_skewer",
+            "percentage": 30,
+            "localName": "Kebab"
+          }
+        ],
+        "watch": [
+          {
+            "id": "kebab",
+            "percentage": 40
+          },
+          {
+            "id": "lahmacun",
+            "percentage": 30
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 30,
+            "localName": "Meze"
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "raki",
+        "beerId": "beer",
+        "signatureCountryFoodId": "kebab",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    },
+    {
+      "id": "united_states",
+      "name": "United States",
+      "flag": "🇺🇸",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "cocktails",
+            "percentage": 25
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "bourbon"
+          }
+        ],
+        "beer": {
+          "type": "light_lager_craft_beer",
+          "brands": [
+            "bud_light",
+            "coors_light",
+            "miller_lite"
+          ],
+          "percentage": 75
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 90
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 75
+          },
+          {
+            "id": "cocktails",
+            "percentage": 25
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "hot_dog",
+            "percentage": 35
+          },
+          {
+            "id": "burger",
+            "percentage": 30
+          },
+          {
+            "id": "fries",
+            "percentage": 35
+          }
+        ],
+        "watch": [
+          {
+            "id": "wings",
+            "percentage": 40
+          },
+          {
+            "id": "pizza",
+            "percentage": 35
+          },
+          {
+            "id": "nachos",
+            "percentage": 25
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "cocktails",
+        "beerId": "beer",
+        "signatureCountryFoodId": "wings",
+        "genericFoodId": "burger",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "burger"
+        }
+      }
+    },
+    {
+      "id": "uruguay",
+      "name": "Uruguay",
+      "flag": "🇺🇾",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "beer",
+            "percentage": 65
+          },
+          {
+            "id": "wine",
+            "percentage": 35
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "tannat"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [
+            "patricia"
+          ],
+          "percentage": 65
+        },
+        "stadiumDrink": [
+          {
+            "id": "beer",
+            "percentage": 85
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "beer",
+            "percentage": 65
+          },
+          {
+            "id": "wine",
+            "percentage": 35
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "choripan",
+            "percentage": 45
+          },
+          {
+            "id": "burger",
+            "percentage": 30
+          },
+          {
+            "id": "fries",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "barbecue",
+            "percentage": 45,
+            "localName": "Asado"
+          },
+          {
+            "id": "choripan",
+            "percentage": 30
+          },
+          {
+            "id": "snack_platter",
+            "percentage": 25
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "wine",
+        "beerId": "beer",
+        "signatureCountryFoodId": "barbecue",
+        "genericFoodId": "burger",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "burger"
+        }
+      }
+    },
+    {
+      "id": "uzbekistan",
+      "name": "Uzbekistan",
+      "flag": "🇺🇿",
+      "drinks": {
+        "localsDrink": [
+          {
+            "id": "tea",
+            "percentage": 45
+          },
+          {
+            "id": "vodka",
+            "percentage": 35
+          },
+          {
+            "id": "beer",
+            "percentage": 20
+          }
+        ],
+        "knownFor": [
+          {
+            "id": "vodka"
+          }
+        ],
+        "beer": {
+          "type": "lager",
+          "brands": [],
+          "percentage": 20,
+          "note": "Beer exists, but tea and spirits are stronger social identifiers."
+        },
+        "stadiumDrink": [
+          {
+            "id": "soft_drinks",
+            "percentage": 55
+          },
+          {
+            "id": "tea",
+            "percentage": 45
+          }
+        ],
+        "watchingDrink": [
+          {
+            "id": "tea",
+            "percentage": 45
+          },
+          {
+            "id": "vodka",
+            "percentage": 35
+          },
+          {
+            "id": "beer",
+            "percentage": 20
+          }
+        ]
+      },
+      "food": {
+        "stadium": [
+          {
+            "id": "grilled_skewer",
+            "percentage": 45,
+            "localName": "Shashlik"
+          },
+          {
+            "id": "sandwich",
+            "percentage": 30
+          },
+          {
+            "id": "fries",
+            "percentage": 25
+          }
+        ],
+        "watch": [
+          {
+            "id": "plov",
+            "percentage": 45
+          },
+          {
+            "id": "grilled_skewer",
+            "percentage": 35,
+            "localName": "Shashlik"
+          },
+          {
+            "id": "savory_pastry",
+            "percentage": 20,
+            "localName": "Samsa"
+          }
+        ]
+      },
+      "consumptionDefaults": {
+        "signatureCountryDrinkId": "vodka",
+        "beerId": "beer",
+        "signatureCountryFoodId": "plov",
+        "genericFoodId": "fries",
+        "fallback": {
+          "signatureCountryDrinkId": "beer",
+          "signatureCountryFoodId": "fries"
+        }
+      }
+    }
+  ]
+}

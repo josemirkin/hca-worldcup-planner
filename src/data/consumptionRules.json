@@ -2,6 +2,5 @@
   "signatureCountryDrinkPerGuest": 1,
   "beerPerGuest": 2,
   "signatureCountryFoodPerGuest": 1,
-  "genericFoodPerGuest": 0.5,
-  "foodMode": "watch"
+  "genericFoodPerGuest": 0.5
 }

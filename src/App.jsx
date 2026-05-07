@@ -37,6 +37,7 @@ const STORAGE_KEYS = {
 const STATUS_OPTIONS = ['unplanned', 'hosting', 'maybe', 'ignore'];
 const VIEW_OPTIONS = [
   { id: 'planner', label: 'Match planner' },
+  { id: 'planned', label: 'Planned Matches' },
   { id: 'pricing', label: 'Menu & pricing' },
 ];
 const CALENDAR_STATUS_ORDER = ['hosting', 'maybe', 'ignore', 'unplanned'];
@@ -427,10 +428,11 @@ function Card({ children, className = '' }) {
   return <div className={`rounded-2xl border border-slate-200 bg-white shadow-sm ${className}`}>{children}</div>;
 }
 
-function NumberInput({ label, value, onChange, suffix, min = 0, step = 0.25, disabled = false }) {
+function NumberInput({ label, helperText, value, onChange, suffix, min = 0, step = 0.25, disabled = false }) {
   return (
     <label className="block">
       <span className="text-xs font-medium text-slate-500">{label}</span>
+      {helperText && <div className="mt-1 text-xs text-slate-400">{helperText}</div>}
       <div className={`mt-1 flex items-center rounded-xl border border-slate-200 px-3 py-2 ${disabled ? 'bg-slate-100 text-slate-400' : 'bg-white'}`}>
         <input
           className="number-input w-full bg-transparent text-sm outline-none"
@@ -458,7 +460,7 @@ function FanSplitControl({ match, plan, countriesById, disabled, onChange }) {
       <div className="flex items-center justify-between gap-3">
         <div>
           <div className="text-xs font-medium text-slate-500">Fan split</div>
-          <div className="mt-1 text-sm text-slate-600">Move in 5% steps. The other side updates automatically.</div>
+          <div className="mt-1 text-xs text-slate-400">Adjust one side and the other updates automatically</div>
         </div>
         <div className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
           {value}% / {100 - value}%
@@ -1024,6 +1026,499 @@ function PricingPanel({ menuItems, updateMenuItem, countries, countriesById, dri
   );
 }
 
+function InsightCard({ title, tone = 'neutral', collapsedContent, expandedContent, isOpen, onToggle }) {
+  const toneClass =
+    tone === 'profit'
+      ? 'border-emerald-200 bg-emerald-50/60'
+      : tone === 'warning'
+        ? 'border-amber-200 bg-amber-50/70'
+        : tone === 'danger'
+          ? 'border-rose-200 bg-rose-50/70'
+          : 'border-slate-200 bg-white';
+
+  return (
+    <button
+      type="button"
+      onClick={onToggle}
+      className={`w-full rounded-2xl border px-5 py-4 text-left transition hover:border-slate-300 ${toneClass}`}
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <div className="text-xs font-medium uppercase tracking-wide text-slate-500">{title}</div>
+          <div className="mt-2">{collapsedContent}</div>
+        </div>
+        <div className="text-xs font-semibold text-slate-500">{isOpen ? 'Collapse' : 'Expand'}</div>
+      </div>
+      {isOpen && <div className="mt-4 border-t border-slate-200 pt-4">{expandedContent}</div>}
+    </button>
+  );
+}
+
+function DashboardSection({ summary, openCards, onToggleCard }) {
+  const statusOrder = ['hosting', 'maybe', 'ignore', 'unplanned'];
+
+  return (
+    <section className="space-y-4">
+      <InsightCard
+        title="Revenue"
+        tone="profit"
+        isOpen={Boolean(openCards.revenue)}
+        onToggle={() => onToggleCard('revenue')}
+        collapsedContent={
+          <div>
+            <div className="text-2xl font-black text-slate-900">{money(summary.revenue.total)}</div>
+            {summary.revenue.potentialTotal > 0 && <div className="mt-1 text-xs font-medium text-amber-700">Potential: {money(summary.revenue.potentialTotal)}</div>}
+          </div>
+        }
+        expandedContent={
+          <div className="space-y-4 text-sm">
+            <div className="grid gap-3 md:grid-cols-2">
+              <div className="rounded-xl bg-white p-3">
+                <div className="text-xs text-slate-500">Confirmed revenue</div>
+                <div className="font-bold text-slate-900">{money(summary.revenue.total)}</div>
+              </div>
+              <div className="rounded-xl border border-amber-200 bg-amber-50 p-3">
+                <div className="text-xs text-amber-700">Potential revenue</div>
+                <div className="font-bold text-amber-900">{money(summary.revenue.potentialTotal)}</div>
+              </div>
+            </div>
+            <div className="border-t border-slate-200 pt-4">
+              <div className="mb-2 text-xs font-medium uppercase tracking-wide text-slate-500">Top revenue matches</div>
+              <div className="space-y-2">
+                {summary.revenue.topMatches.length ? summary.revenue.topMatches.map((match) => (
+                  <div key={match.id} className="flex items-center justify-between gap-3">
+                    <div className="text-slate-700">{match.label}</div>
+                    <div className="font-semibold text-slate-900">{money(match.revenue)}</div>
+                  </div>
+                )) : <div className="text-slate-500">No hosting revenue yet.</div>}
+              </div>
+            </div>
+            {summary.revenue.potentialMatches.length > 0 && (
+              <div className="border-t border-slate-200 pt-4">
+                <div className="mb-2 text-xs font-medium uppercase tracking-wide text-amber-700">Potential revenue matches</div>
+                <div className="space-y-2">
+                  {summary.revenue.potentialMatches.map((match) => (
+                    <div key={match.id} className="flex items-center justify-between gap-3">
+                      <div className="text-slate-700">{match.label}</div>
+                      <div className="font-semibold text-amber-900">{money(match.revenue)}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            <div className="border-t border-slate-200 pt-4">
+              <div className="mb-2 text-xs font-medium uppercase tracking-wide text-slate-500">Revenue by category</div>
+              <div className="grid grid-cols-2 gap-2">
+                <div className="rounded-xl bg-white p-3">
+                  <div className="text-xs text-slate-500">Food</div>
+                  <div className="font-bold text-slate-900">{money(summary.revenue.byCategory.food)}</div>
+                </div>
+                <div className="rounded-xl bg-white p-3">
+                  <div className="text-xs text-slate-500">Drinks</div>
+                  <div className="font-bold text-slate-900">{money(summary.revenue.byCategory.drink)}</div>
+                </div>
+              </div>
+            </div>
+            <div className="border-t border-slate-200 pt-4">
+              <div className="mb-2 text-xs font-medium uppercase tracking-wide text-slate-500">Top revenue items</div>
+              <div className="space-y-2">
+                {summary.revenue.topItems.length ? summary.revenue.topItems.map((item) => (
+                  <div key={`${item.kind}:${item.id}`} className="flex items-center justify-between gap-3">
+                    <div className="text-slate-700">{item.name}</div>
+                    <div className="font-semibold text-slate-900">{money(item.revenue)}</div>
+                  </div>
+                )) : <div className="text-slate-500">No revenue items yet.</div>}
+              </div>
+            </div>
+          </div>
+        }
+      />
+
+      <InsightCard
+        title="Profit"
+        tone="profit"
+        isOpen={Boolean(openCards.profit)}
+        onToggle={() => onToggleCard('profit')}
+        collapsedContent={
+          <div>
+            <div className="text-2xl font-black text-slate-900">{money(summary.profit.total)}</div>
+            {summary.profit.potentialTotal > 0 && <div className="mt-1 text-xs font-medium text-amber-700">Potential: {money(summary.profit.potentialTotal)}</div>}
+          </div>
+        }
+        expandedContent={
+          <div className="space-y-4 text-sm">
+            <div>
+              <div className="mb-2 text-xs font-medium uppercase tracking-wide text-slate-500">Top profit matches</div>
+              <div className="space-y-2">
+                {summary.profit.topMatches.length ? summary.profit.topMatches.map((match) => (
+                  <div key={match.id} className="flex items-center justify-between gap-3">
+                    <div className="text-slate-700">{match.label}</div>
+                    <div className="font-semibold text-emerald-700">{money(match.profit)}</div>
+                  </div>
+                )) : <div className="text-slate-500">No hosting profit yet.</div>}
+              </div>
+            </div>
+            {summary.profit.lowMatches.length > 0 && (
+              <div className="border-t border-slate-200 pt-4">
+                <div className="mb-2 text-xs font-medium uppercase tracking-wide text-slate-500">Low profit matches</div>
+                <div className="space-y-2">
+                  {summary.profit.lowMatches.map((match) => (
+                    <div key={match.id} className="flex items-center justify-between gap-3">
+                      <div className="text-slate-700">{match.label}</div>
+                      <div className="font-semibold text-slate-900">{money(match.profit)}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {summary.profit.potentialTotal > 0 && (
+              <div className="rounded-xl border border-amber-200 bg-amber-50 p-3">
+                <div className="text-xs text-amber-700">Potential profit</div>
+                <div className="font-bold text-amber-900">{money(summary.profit.potentialTotal)}</div>
+              </div>
+            )}
+            <div className="rounded-xl bg-white p-3">
+              <div className="text-xs text-slate-500">Overall margin</div>
+              <div className="font-bold text-slate-900">{percent(summary.profit.margin)}</div>
+            </div>
+          </div>
+        }
+      />
+
+      <InsightCard
+        title="Matches"
+        tone="neutral"
+        isOpen={Boolean(openCards.matches)}
+        onToggle={() => onToggleCard('matches')}
+        collapsedContent={
+          <div className="grid grid-cols-2 gap-2 text-sm">
+            {statusOrder.map((status) => (
+              <div key={status} className="rounded-xl bg-slate-50 p-3">
+                <div className="text-xs text-slate-500">{formatFilterLabel(status)}</div>
+                <div className={`mt-1 font-bold ${status === 'ignore' ? 'text-slate-500' : 'text-slate-900'}`}>{summary.matches.counts[status]}</div>
+              </div>
+            ))}
+          </div>
+        }
+        expandedContent={
+          <div className="space-y-4 text-sm">
+            {['hosting', 'maybe'].map((status) => (
+              <div key={status}>
+                <div className="mb-2 text-xs font-medium uppercase tracking-wide text-slate-500">{formatFilterLabel(status)}</div>
+                <div className="space-y-2">
+                  {summary.matches.byStatus[status].length ? summary.matches.byStatus[status].slice(0, 5).map((match) => (
+                    <div key={match.id} className="rounded-xl bg-white p-3">
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="font-semibold text-slate-900">{match.label}</div>
+                        <div className="text-xs text-slate-500">Guests {match.attendance}</div>
+                      </div>
+                      <div className="mt-1 text-xs text-slate-500">Revenue {money(match.revenue)} | Profit {money(match.profit)}</div>
+                    </div>
+                  )) : <div className="text-slate-500">No matches in this status.</div>}
+                </div>
+              </div>
+            ))}
+            <div className="border-t border-slate-200 pt-4">
+              <div className="grid gap-3 md:grid-cols-2">
+                {['ignore', 'unplanned'].map((status) => (
+                  <div key={status} className="rounded-xl bg-slate-50 p-3">
+                    <div className="text-xs font-medium uppercase tracking-wide text-slate-400">{formatFilterLabel(status)}</div>
+                    <div className="mt-1 text-sm text-slate-500">{summary.matches.byStatus[status].length} matches</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        }
+      />
+
+      <InsightCard
+        title="Missing Pricing"
+        tone={summary.missingPricing.count ? 'danger' : 'neutral'}
+        isOpen={Boolean(openCards.missingPricing)}
+        onToggle={() => onToggleCard('missingPricing')}
+        collapsedContent={<div className="text-2xl font-black text-slate-900">{summary.missingPricing.count}</div>}
+        expandedContent={
+          <div className="space-y-3 text-sm">
+            {summary.missingPricing.items.length ? summary.missingPricing.items.map((item) => (
+              <div key={`${item.kind}:${item.id}`} className="rounded-xl bg-white p-3">
+                <div className="font-semibold text-slate-900">{item.name}</div>
+                <div className="mt-1 text-xs text-slate-500">
+                  Matches: {item.matches.slice(0, 3).join(', ')}
+                  {item.matches.length > 3 ? ` +${item.matches.length - 3} more` : ''}
+                </div>
+                <div className="mt-1 text-xs text-rose-700">Complete this in Menu & pricing</div>
+              </div>
+            )) : <div className="text-slate-500">No missing pricing in current estimates.</div>}
+            {summary.missingPricing.potentialCount > 0 && (
+              <div className="border-t border-slate-200 pt-3">
+                <div className="text-xs font-medium uppercase tracking-wide text-amber-700">Potential setup work</div>
+                <div className="mt-1 text-xs text-amber-700">{summary.missingPricing.potentialCount} items are missing pricing in maybe matches.</div>
+              </div>
+            )}
+          </div>
+        }
+      />
+    </section>
+  );
+}
+
+function PlannedMatchItem({ match, plan, estimate, countriesById, selected, onOpen }) {
+  const [teamA, teamB] = match.teams;
+  const showFinancials = plan.planningStatus === 'hosting' || plan.planningStatus === 'maybe';
+  const isPotential = plan.planningStatus === 'maybe';
+  const hasMissingPricing = showFinancials && estimate.totals.hasMissingPricing;
+
+  return (
+    <button
+      type="button"
+      onClick={onOpen}
+      className={`w-full rounded-2xl border p-4 text-left transition hover:border-slate-300 hover:bg-slate-50 ${
+        selected ? 'border-2 border-slate-900 bg-slate-100' : 'border border-slate-200 bg-white'
+      }`}
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <div className="text-lg font-bold text-slate-900">
+            {countriesById[teamA]?.flag} {countriesById[teamA]?.name || teamA} <span className="text-slate-400">vs</span> {countriesById[teamB]?.flag}{' '}
+            {countriesById[teamB]?.name || teamB}
+          </div>
+          <div className="mt-1 text-sm text-slate-500">
+            {miamiDateTime(match.kickoffDateTime)} | {formatMatchStage(match)}
+          </div>
+        </div>
+        <span className={`rounded-full px-2 py-1 text-xs font-semibold ${statusColor(plan.planningStatus)}`}>{plan.planningStatus}</span>
+      </div>
+
+      <div className="mt-4 grid gap-3 md:grid-cols-[auto_auto_1fr] md:items-start">
+        <div className="rounded-xl bg-slate-50 px-3 py-2">
+          <div className="text-[11px] uppercase tracking-wide text-slate-500">Attendance</div>
+          <div className="text-sm font-semibold text-slate-900">{plan.expectedAttendance || 0}</div>
+        </div>
+
+        {showFinancials ? (
+          <>
+            <div className={`rounded-xl px-3 py-2 ${isPotential ? 'bg-amber-50 text-amber-900' : 'bg-emerald-50 text-emerald-900'}`}>
+              <div className="text-[11px] uppercase tracking-wide text-current/70">{isPotential ? 'Potential revenue' : 'Revenue'}</div>
+              <div className="text-sm font-semibold">{money(estimate.totals.revenue)}</div>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <div className={`rounded-xl px-3 py-2 ${isPotential ? 'bg-amber-50 text-amber-900' : 'bg-slate-50 text-slate-900'}`}>
+                <div className="text-[11px] uppercase tracking-wide text-current/70">{isPotential ? 'Potential profit' : 'Profit'}</div>
+                <div className="text-sm font-semibold">{money(estimate.totals.profit)}</div>
+              </div>
+              {hasMissingPricing && (
+                <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800">
+                  Missing pricing in estimate
+                </div>
+              )}
+            </div>
+          </>
+        ) : (
+          <div className="md:col-span-2 flex items-center justify-end">
+            <div className="rounded-xl bg-slate-50 px-3 py-2 text-xs text-slate-500">Ignored match</div>
+          </div>
+        )}
+      </div>
+    </button>
+  );
+}
+
+function PlannedMatchesView({ plannedMatches, ignoredMatches, countriesById, selectedMatchId, onOpenMatch }) {
+  const [showIgnored, setShowIgnored] = useState(false);
+
+  if (!plannedMatches.length && !ignoredMatches.length) {
+    return (
+      <Card className="p-6">
+        <div className="text-sm text-slate-500">No planned matches yet.</div>
+      </Card>
+    );
+  }
+
+  return (
+    <section className="space-y-4">
+      {plannedMatches.length > 0 ? (
+        <div className="space-y-3">
+          {plannedMatches.map(({ match, plan, estimate }) => (
+            <PlannedMatchItem
+              key={match.id}
+              match={match}
+              plan={plan}
+              estimate={estimate}
+              countriesById={countriesById}
+              selected={selectedMatchId === match.id}
+              onOpen={() => onOpenMatch(match.id)}
+            />
+          ))}
+        </div>
+      ) : (
+        <Card className="p-6">
+          <div className="text-sm text-slate-500">No hosting or maybe matches yet.</div>
+        </Card>
+      )}
+
+      {ignoredMatches.length > 0 && (
+        <Card className="p-4">
+          <button
+            type="button"
+            onClick={() => setShowIgnored((current) => !current)}
+            className="flex w-full items-center justify-between gap-3 text-left"
+          >
+            <div>
+              <div className="text-xs font-medium uppercase tracking-wide text-slate-500">Ignored matches</div>
+              <div className="mt-1 text-sm text-slate-600">{ignoredMatches.length} match{ignoredMatches.length === 1 ? '' : 'es'}</div>
+            </div>
+            <div className="text-xs font-semibold text-slate-500">{showIgnored ? 'Collapse' : 'Expand'}</div>
+          </button>
+
+          {showIgnored && (
+            <div className="mt-4 space-y-3 border-t border-slate-200 pt-4">
+              {ignoredMatches.map(({ match, plan, estimate }) => (
+                <PlannedMatchItem
+                  key={match.id}
+                  match={match}
+                  plan={plan}
+                  estimate={estimate}
+                  countriesById={countriesById}
+                  selected={selectedMatchId === match.id}
+                  onOpen={() => onOpenMatch(match.id)}
+                />
+              ))}
+            </div>
+          )}
+        </Card>
+      )}
+    </section>
+  );
+}
+
+function BulkPlanningActions({ countries, stageOptions, matches, countriesById, getPlan, feedback, onApplyBulk }) {
+  const [filterType, setFilterType] = useState('country');
+  const [countryId, setCountryId] = useState('');
+  const [stage, setStage] = useState('');
+  const [targetStatus, setTargetStatus] = useState('hosting');
+
+  const selectedValueLabel =
+    filterType === 'country'
+      ? countriesById[countryId]?.name || ''
+      : stage ? stage.replaceAll('_', ' ') : '';
+
+  const matchedMatches = useMemo(() => {
+    if (filterType === 'country') {
+      if (!countryId) return [];
+      return matches.filter((match) => match.teams.includes(countryId));
+    }
+    if (!stage) return [];
+    return matches.filter((match) => match.stage === stage);
+  }, [countryId, filterType, matches, stage]);
+
+  const preview = useMemo(() => {
+    const totalMatched = matchedMatches.length;
+    const alreadySet = matchedMatches.filter((match) => getPlan(match).planningStatus === targetStatus).length;
+    const willChange = totalMatched - alreadySet;
+    const sample = matchedMatches
+      .slice(0, 3)
+      .map((match) => match.teams.map((id) => countriesById[id]?.name || id).join(' vs '));
+
+    return { totalMatched, alreadySet, willChange, sample };
+  }, [countriesById, getPlan, matchedMatches, targetStatus]);
+
+  const handleApply = () => {
+    if (!preview.totalMatched || !selectedValueLabel) return;
+    const message = `This will update ${preview.totalMatched} ${selectedValueLabel} match${preview.totalMatched === 1 ? '' : 'es'} to ${formatFilterLabel(targetStatus)}.`;
+    if (!window.confirm(message)) return;
+    onApplyBulk({
+      matchIds: matchedMatches.map((match) => match.id),
+      targetStatus,
+      filterLabel: selectedValueLabel,
+      totalMatched: preview.totalMatched,
+    });
+  };
+
+  return (
+    <Card className="p-5">
+      <div className="mb-4 flex items-center gap-2">
+        <Save size={18} />
+        <h2 className="font-bold">Bulk Planning Actions</h2>
+      </div>
+
+      <div className="grid gap-3 xl:grid-cols-[180px_minmax(0,1fr)_180px_auto]">
+        <select
+          className="rounded-xl border border-slate-200 px-3 py-2 text-sm"
+          value={filterType}
+          onChange={(event) => setFilterType(event.target.value)}
+        >
+          <option value="country">Country</option>
+          <option value="stage">Stage</option>
+        </select>
+
+        {filterType === 'country' ? (
+          <select className="rounded-xl border border-slate-200 px-3 py-2 text-sm" value={countryId} onChange={(event) => setCountryId(event.target.value)}>
+            <option value="">Select country</option>
+            {countries.map((country) => (
+              <option key={country.id} value={country.id}>
+                {country.name}
+              </option>
+            ))}
+          </select>
+        ) : (
+          <select className="rounded-xl border border-slate-200 px-3 py-2 text-sm" value={stage} onChange={(event) => setStage(event.target.value)}>
+            <option value="">Select stage</option>
+            {stageOptions.map((option) => (
+              <option key={option} value={option}>
+                {option.replaceAll('_', ' ')}
+              </option>
+            ))}
+          </select>
+        )}
+
+        <select
+          className="rounded-xl border border-slate-200 px-3 py-2 text-sm"
+          value={targetStatus}
+          onChange={(event) => setTargetStatus(event.target.value)}
+        >
+          <option value="hosting">Hosting</option>
+          <option value="maybe">Maybe</option>
+          <option value="ignore">Ignore</option>
+        </select>
+
+        <button
+          type="button"
+          onClick={handleApply}
+          disabled={!preview.totalMatched}
+          className={`rounded-xl px-4 py-2 text-sm font-semibold transition ${
+            preview.totalMatched ? 'bg-slate-900 text-white hover:bg-slate-800' : 'cursor-not-allowed bg-slate-200 text-slate-500'
+          }`}
+        >
+          Confirm update
+        </button>
+      </div>
+
+      <div className="mt-4 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600">
+        {selectedValueLabel ? (
+          preview.totalMatched ? (
+            <>
+              <div>
+                This will update {preview.totalMatched} {selectedValueLabel} match{preview.totalMatched === 1 ? '' : 'es'} to {formatFilterLabel(targetStatus)}.
+              </div>
+              <div className="mt-1 text-xs text-slate-500">
+                {preview.willChange} will change, {preview.alreadySet} already {preview.alreadySet === 1 ? 'is' : 'are'} {formatFilterLabel(targetStatus)}.
+              </div>
+              {preview.sample.length > 0 && <div className="mt-2 text-xs text-slate-500">Examples: {preview.sample.join(' | ')}</div>}
+            </>
+          ) : (
+            <div>No matches found for this selection.</div>
+          )
+        ) : (
+          <div>Choose a country or stage to preview the bulk update.</div>
+        )}
+      </div>
+
+      {feedback && <div className="mt-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">{feedback}</div>}
+    </Card>
+  );
+}
+
 export default function App() {
   const countriesById = useMemo(() => buildMap(COUNTRIES), []);
   const drinksById = useMemo(() => buildMap(DRINKS), []);
@@ -1039,7 +1534,9 @@ export default function App() {
   const [search, setSearch] = useState('');
   const [selectedMatchId, setSelectedMatchId] = useState(null);
   const [activeView, setActiveView] = useState('planner');
+  const [openInsightCards, setOpenInsightCards] = useState({});
   const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [bulkFeedback, setBulkFeedback] = useState('');
   const [selectedDayKey, setSelectedDayKey] = useState(null);
   const [calendarMonth, setCalendarMonth] = useState(() => {
     const firstMatchWithDate = MATCHES.find((match) => match.kickoffDateTime)?.kickoffDateTime;
@@ -1063,12 +1560,27 @@ export default function App() {
     });
   };
 
+  const bulkUpdatePlanningStatus = ({ matchIds, targetStatus, filterLabel, totalMatched }) => {
+    setMatchPlans((previous) => {
+      const byMatchId = new Map(previous.map((plan) => [plan.matchId, plan]));
+      for (const matchId of matchIds) {
+        const match = MATCHES.find((item) => item.id === matchId);
+        const existing = byMatchId.get(matchId);
+        byMatchId.set(matchId, { ...mergePlan(match, existing), planningStatus: targetStatus });
+      }
+      return Array.from(byMatchId.values());
+    });
+    setBulkFeedback(`Updated ${totalMatched} ${filterLabel} match${totalMatched === 1 ? '' : 'es'} to ${formatFilterLabel(targetStatus)}.`);
+  };
+
   const filteredMatches = MATCHES.filter((match) => {
     const plan = getPlan(match);
     const teamNames = match.teams.map((id) => countriesById[id]?.name || id).join(' ').toLowerCase();
+    const matchDayKey = dateKeyFromIso(match.kickoffDateTime);
     if (countryFilter !== 'all' && !match.teams.includes(countryFilter)) return false;
     if (statusFilter !== 'all' && plan.planningStatus !== statusFilter) return false;
     if (stageFilter !== 'all' && match.stage !== stageFilter) return false;
+    if (selectedDayKey && matchDayKey !== selectedDayKey) return false;
     if (search && !teamNames.includes(search.toLowerCase())) return false;
     return true;
   });
@@ -1096,6 +1608,141 @@ export default function App() {
         : { rows: [], totals: { revenue: 0, cost: 0, profit: 0, margin: null, hasMissingPricing: false } },
     [selectedMatch, selectedPlan, rules, countriesById, drinksById, foodsById, menuItems],
   );
+
+  const dashboardSummary = useMemo(() => {
+    const matchSummaries = filteredMatches.map((match) => {
+      const plan = getPlan(match);
+      const estimateForMatch = calculateEstimate(match, plan, rules, countriesById, drinksById, foodsById, menuItems);
+      const label = match.teams.map((id) => countriesById[id]?.name || id).join(' vs ');
+      const includedInFinancials = plan.planningStatus === 'hosting';
+      const includedInPotentialFinancials = plan.planningStatus === 'maybe';
+      const categoryTotals = estimateForMatch.rows.reduce(
+        (acc, row) => {
+          acc[row.kind] += row.revenue;
+          return acc;
+        },
+        { drink: 0, food: 0 },
+      );
+
+      return {
+        id: match.id,
+        label,
+        plan,
+        attendance: plan.expectedAttendance || 0,
+        revenue: includedInFinancials ? estimateForMatch.totals.revenue : 0,
+        profit: includedInFinancials ? estimateForMatch.totals.profit : 0,
+        rows: estimateForMatch.rows,
+        categoryTotals,
+        includedInFinancials,
+        includedInPotentialFinancials,
+      };
+    });
+
+    const includedMatches = matchSummaries.filter((match) => match.includedInFinancials);
+    const potentialMatches = matchSummaries.filter((match) => match.includedInPotentialFinancials);
+    const statusCounts = { hosting: 0, maybe: 0, ignore: 0, unplanned: 0 };
+    const byStatus = { hosting: [], maybe: [], ignore: [], unplanned: [] };
+
+    for (const match of matchSummaries) {
+      statusCounts[match.plan.planningStatus] += 1;
+      byStatus[match.plan.planningStatus].push(match);
+    }
+
+    const totalRevenue = includedMatches.reduce((sum, match) => sum + match.revenue, 0);
+    const totalProfit = includedMatches.reduce((sum, match) => sum + match.profit, 0);
+    const potentialRevenue = potentialMatches.reduce((sum, match) => sum + match.rows.reduce((rowSum, row) => rowSum + row.revenue, 0), 0);
+    const potentialProfit = potentialMatches.reduce((sum, match) => sum + match.rows.reduce((rowSum, row) => rowSum + row.profit, 0), 0);
+    const byCategory = includedMatches.reduce(
+      (acc, match) => ({
+        drink: acc.drink + match.categoryTotals.drink,
+        food: acc.food + match.categoryTotals.food,
+      }),
+      { drink: 0, food: 0 },
+    );
+
+    const buildItemSummary = (matches) => {
+      const itemMap = {};
+      for (const match of matches) {
+        for (const row of match.rows) {
+          const key = `${row.kind}:${row.id}`;
+          if (!itemMap[key]) {
+            itemMap[key] = {
+              id: row.id,
+              kind: row.kind,
+              name: row.name,
+              revenue: 0,
+              matches: new Set(),
+              missingMenuItem: row.missingMenuItem,
+              missingCost: row.missingCost,
+              missingSellPrice: row.missingSellPrice,
+            };
+          }
+          itemMap[key].revenue += row.revenue;
+          itemMap[key].matches.add(match.label);
+          itemMap[key].missingMenuItem = itemMap[key].missingMenuItem || row.missingMenuItem;
+          itemMap[key].missingCost = itemMap[key].missingCost || row.missingCost;
+          itemMap[key].missingSellPrice = itemMap[key].missingSellPrice || row.missingSellPrice;
+        }
+      }
+
+      return Object.values(itemMap)
+        .map((item) => ({ ...item, matches: Array.from(item.matches) }))
+        .sort((a, b) => b.revenue - a.revenue || a.name.localeCompare(b.name));
+    };
+
+    const aggregatedItems = buildItemSummary(includedMatches);
+    const potentialAggregatedItems = buildItemSummary(potentialMatches);
+    const missingPricingAll = aggregatedItems.filter((item) => item.missingMenuItem || item.missingCost || item.missingSellPrice);
+    const potentialMissingPricing = potentialAggregatedItems.filter((item) => item.missingMenuItem || item.missingCost || item.missingSellPrice);
+
+    return {
+      revenue: {
+        total: totalRevenue,
+        potentialTotal: potentialRevenue,
+        byCategory,
+        topMatches: [...includedMatches].sort((a, b) => b.revenue - a.revenue).slice(0, 3),
+        potentialMatches: potentialMatches
+          .map((match) => ({ ...match, revenue: match.rows.reduce((sum, row) => sum + row.revenue, 0) }))
+          .sort((a, b) => b.revenue - a.revenue)
+          .slice(0, 3),
+        topItems: aggregatedItems.slice(0, 3),
+      },
+      profit: {
+        total: totalProfit,
+        potentialTotal: potentialProfit,
+        margin: totalRevenue ? (totalProfit / totalRevenue) * 100 : null,
+        topMatches: [...includedMatches].sort((a, b) => b.profit - a.profit).slice(0, 3),
+        lowMatches: [...includedMatches].sort((a, b) => a.profit - b.profit).slice(0, 3),
+      },
+      matches: {
+        counts: statusCounts,
+        byStatus,
+      },
+      missingPricing: {
+        count: missingPricingAll.length,
+        items: missingPricingAll.slice(0, 5),
+        potentialCount: potentialMissingPricing.length,
+      },
+    };
+  }, [filteredMatches, rules, countriesById, drinksById, foodsById, menuItems]);
+
+  const plannedMatchesSummary = useMemo(() => {
+    const reviewedMatches = MATCHES.map((match) => {
+      const plan = getPlan(match);
+      return {
+        match,
+        plan,
+        estimate: calculateEstimate(match, plan, rules, countriesById, drinksById, foodsById, menuItems),
+      };
+    })
+      .filter(({ plan }) => ['hosting', 'maybe', 'ignore'].includes(plan.planningStatus))
+      .sort((a, b) => compareMatchKickoff(a.match, b.match));
+
+    return {
+      active: reviewedMatches.filter(({ plan }) => plan.planningStatus !== 'ignore'),
+      ignored: reviewedMatches.filter(({ plan }) => plan.planningStatus === 'ignore'),
+    };
+  }, [rules, countriesById, drinksById, foodsById, menuItems, matchPlans]);
 
   const updateSplit = (countryId, value) => {
     if (!selectedMatchResolved) return;
@@ -1136,11 +1783,38 @@ export default function App() {
   };
 
   const toggleMatchSelection = (matchId) => {
+    const targetMatch = MATCHES.find((match) => match.id === matchId);
+    const targetDayKey = dateKeyFromIso(targetMatch?.kickoffDateTime);
+    setBulkFeedback('');
+    setSelectedDayKey(targetDayKey || null);
     setSelectedMatchId((current) => (current === matchId ? null : matchId));
   };
 
   const toggleDaySelection = (dayKey) => {
-    setSelectedDayKey((current) => (current === dayKey ? null : dayKey));
+    setSelectedDayKey((current) => {
+      const nextDayKey = current === dayKey ? null : dayKey;
+      setBulkFeedback('');
+      if (nextDayKey && selectedMatchId) {
+        const activeMatch = MATCHES.find((match) => match.id === selectedMatchId);
+        if (dateKeyFromIso(activeMatch?.kickoffDateTime) !== nextDayKey) {
+          setSelectedMatchId(null);
+        }
+      }
+      return nextDayKey;
+    });
+  };
+
+  const toggleInsightCard = (cardId) => {
+    setBulkFeedback('');
+    setOpenInsightCards((current) => ({ ...current, [cardId]: !current[cardId] }));
+  };
+
+  const openMatchInPlanner = (matchId) => {
+    const targetMatch = MATCHES.find((match) => match.id === matchId);
+    const targetDayKey = dateKeyFromIso(targetMatch?.kickoffDateTime);
+    setSelectedDayKey(targetDayKey || null);
+    setSelectedMatchId(matchId);
+    setActiveView('planner');
   };
 
   const shiftCalendarMonth = (direction) => {
@@ -1148,8 +1822,8 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-100 p-4 text-slate-900">
-      <div className="mx-auto w-full max-w-[1680px] space-y-4">
+    <div className="min-h-screen bg-slate-100 px-6 py-6 text-slate-900 xl:px-8 xl:py-8">
+      <div className="mx-auto w-full max-w-[1680px] space-y-6">
         <div className="flex justify-end">
           <div className="relative">
             <button
@@ -1175,119 +1849,168 @@ export default function App() {
           </div>
         </div>
 
-        <div className="grid gap-4 lg:grid-cols-[420px_minmax(0,1fr)]">
-          <Card className="h-fit p-4">
-            <MatchCalendar
-              matches={MATCHES}
-              getPlan={getPlan}
-              selectedMatchId={selectedMatch?.id}
-              selectedDayKey={selectedDayKey}
-              onSelectMatch={toggleMatchSelection}
-              onSelectDay={toggleDaySelection}
-              monthDate={calendarMonth}
-              onChangeMonth={shiftCalendarMonth}
-            />
-
-            <div className="mb-4 flex items-center gap-2">
-              <Search size={18} />
-              <h2 className="font-bold">Matches</h2>
-            </div>
-            <div className="space-y-3">
-              <input
-                className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm outline-none"
-                placeholder="Search teams..."
-                value={search}
-                onChange={(event) => setSearch(event.target.value)}
-              />
-              <div className="grid grid-cols-2 gap-2">
-                <select
-                  className="rounded-xl border border-slate-200 px-3 py-2 text-sm"
-                  value={countryFilter}
-                  onChange={(event) => setCountryFilter(event.target.value)}
-                >
-                  <option value="all">All countries</option>
-                  {COUNTRIES.map((country) => (
-                    <option key={country.id} value={country.id}>
-                      {country.name}
-                    </option>
-                  ))}
-                </select>
-                <select
-                  className="rounded-xl border border-slate-200 px-3 py-2 text-sm"
-                  value={stageFilter}
-                  onChange={(event) => setStageFilter(event.target.value)}
-                >
-                  <option value="all">All stages</option>
-                  {stageOptions.map((stage) => (
-                    <option key={stage} value={stage}>
-                      {stage.replaceAll('_', ' ')}
-                    </option>
-                  ))}
-                </select>
-                <select
-                  className="col-span-2 rounded-xl border border-slate-200 px-3 py-2 text-sm"
-                  value={statusFilter}
-                  onChange={(event) => setStatusFilter(event.target.value)}
-                >
-                  <option value="all">All status</option>
-                  {STATUS_OPTIONS.map((status) => (
-                    <option key={status} value={status}>
-                      {status}
-                    </option>
-                  ))}
-                </select>
+        <div className="space-y-6">
+          <div className="grid items-start gap-6 xl:grid-cols-[minmax(0,2fr)_minmax(360px,1fr)]">
+            <main className="space-y-6">
+              <div className="flex flex-wrap gap-2">
+                {VIEW_OPTIONS.map((option) => (
+                  <button
+                    key={option.id}
+                    type="button"
+                    onClick={() => setActiveView(option.id)}
+                    className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
+                      activeView === option.id ? 'bg-slate-900 text-white' : 'bg-white text-slate-600 hover:bg-slate-100'
+                    }`}
+                  >
+                    {option.label}
+                  </button>
+                ))}
               </div>
-            </div>
-            <div className="mt-4 max-h-[70vh] space-y-2 overflow-auto pr-1">
-              {filteredMatches.map((match) => (
-                <MatchCard
-                  key={match.id}
-                  match={match}
-                  plan={getPlan(match)}
+
+              {activeView === 'planner' && (
+                <div className="space-y-4">
+                  <div className="text-sm font-medium text-slate-500">Select a match -&gt; Set attendance -&gt; Review estimate</div>
+                  <DashboardSection summary={dashboardSummary} openCards={openInsightCards} onToggleCard={toggleInsightCard} />
+                </div>
+              )}
+
+              {activeView === 'planned' && (
+                <PlannedMatchesView
+                  plannedMatches={plannedMatchesSummary.active}
+                  ignoredMatches={plannedMatchesSummary.ignored}
                   countriesById={countriesById}
-                  selected={selectedMatch?.id === match.id}
-                  onSelect={() => toggleMatchSelection(match.id)}
-                  onStatusChange={(status) => savePlan(match.id, { planningStatus: status })}
+                  selectedMatchId={selectedMatch?.id}
+                  onOpenMatch={openMatchInPlanner}
                 />
-              ))}
-            </div>
-          </Card>
+              )}
 
-          <main className="space-y-4">
-            <div className="flex flex-wrap gap-2">
-              {VIEW_OPTIONS.map((option) => (
-                <button
-                  key={option.id}
-                  type="button"
-                  onClick={() => setActiveView(option.id)}
-                  className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
-                    activeView === option.id ? 'bg-slate-900 text-white' : 'bg-white text-slate-600 hover:bg-slate-100'
-                  }`}
-                >
-                  {option.label}
-                </button>
-              ))}
-            </div>
+              {activeView === 'pricing' && (
+                <PricingPanel
+                  menuItems={menuItems}
+                  updateMenuItem={updateMenuItem}
+                  countries={COUNTRIES}
+                  countriesById={countriesById}
+                  drinksById={drinksById}
+                  foodsById={foodsById}
+                  selectedMatch={selectedMatch}
+                />
+              )}
+            </main>
 
-            {activeView === 'planner' && (
-              <>
-                {selectedDayKey && (
-                  <DaySchedulePanel
-                    dayKey={selectedDayKey}
-                    matches={matchesByDateKey[selectedDayKey]}
-                    countriesById={countriesById}
-                    getPlan={getPlan}
-                    selectedMatchId={selectedMatch?.id}
-                    onSelectMatch={toggleMatchSelection}
+            <aside className="space-y-4">
+              <Card className="h-fit p-4">
+                <MatchCalendar
+                  matches={MATCHES}
+                  getPlan={getPlan}
+                  selectedMatchId={selectedMatch?.id}
+                  selectedDayKey={selectedDayKey}
+                  onSelectMatch={toggleMatchSelection}
+                  onSelectDay={toggleDaySelection}
+                  monthDate={calendarMonth}
+                  onChangeMonth={shiftCalendarMonth}
+                />
+
+                <div className="mb-4 flex items-center gap-2">
+                  <Search size={18} />
+                  <h2 className="text-base font-bold">Matches</h2>
+                </div>
+                <div className="space-y-3">
+                  <input
+                    className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm outline-none"
+                    placeholder="Search teams..."
+                    value={search}
+                    onChange={(event) => setSearch(event.target.value)}
                   />
-                )}
+                  <div className="grid grid-cols-2 gap-2">
+                    <select
+                      className="rounded-xl border border-slate-200 px-3 py-2 text-sm"
+                      value={countryFilter}
+                      onChange={(event) => setCountryFilter(event.target.value)}
+                    >
+                      <option value="all">All countries</option>
+                      {COUNTRIES.map((country) => (
+                        <option key={country.id} value={country.id}>
+                          {country.name}
+                        </option>
+                      ))}
+                    </select>
+                    <select
+                      className="rounded-xl border border-slate-200 px-3 py-2 text-sm"
+                      value={stageFilter}
+                      onChange={(event) => setStageFilter(event.target.value)}
+                    >
+                      <option value="all">All stages</option>
+                      {stageOptions.map((stage) => (
+                        <option key={stage} value={stage}>
+                          {stage.replaceAll('_', ' ')}
+                        </option>
+                      ))}
+                    </select>
+                    <select
+                      className="col-span-2 rounded-xl border border-slate-200 px-3 py-2 text-sm"
+                      value={statusFilter}
+                      onChange={(event) => setStatusFilter(event.target.value)}
+                    >
+                      <option value="all">All status</option>
+                      {STATUS_OPTIONS.map((status) => (
+                        <option key={status} value={status}>
+                          {status}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                <div className="mt-4 max-h-[64vh] space-y-2 overflow-auto pr-1">
+                  {filteredMatches.map((match) => (
+                    <MatchCard
+                      key={match.id}
+                      match={match}
+                      plan={getPlan(match)}
+                      countriesById={countriesById}
+                      selected={selectedMatch?.id === match.id}
+                      onSelect={() => toggleMatchSelection(match.id)}
+                      onStatusChange={(status) => savePlan(match.id, { planningStatus: status })}
+                    />
+                  ))}
+                  {!filteredMatches.length && <div className="rounded-xl bg-slate-50 px-3 py-4 text-sm text-slate-500">No matches match the current filters.</div>}
+                </div>
+              </Card>
 
+              {(activeView === 'planner' || activeView === 'planned') && selectedDayKey && (
+                <DaySchedulePanel
+                  dayKey={selectedDayKey}
+                  matches={matchesByDateKey[selectedDayKey]}
+                  countriesById={countriesById}
+                  getPlan={getPlan}
+                  selectedMatchId={selectedMatch?.id}
+                  onSelectMatch={toggleMatchSelection}
+                />
+              )}
+            </aside>
+          </div>
+
+          {activeView === 'planner' && (
+            <BulkPlanningActions
+              countries={COUNTRIES}
+              stageOptions={stageOptions}
+              matches={MATCHES}
+              countriesById={countriesById}
+              getPlan={getPlan}
+              feedback={bulkFeedback}
+              onApplyBulk={bulkUpdatePlanningStatus}
+            />
+          )}
+
+          {activeView === 'planner' &&
+            (selectedMatch && selectedPlan ? (
+              <section className="space-y-6">
                 <Card className="p-5">
                   <div className="mb-4 flex items-center gap-2">
                     <SlidersHorizontal size={18} />
-                    <h2 className="font-bold">Dynamic consumption per guest</h2>
+                    <h2 className="font-bold">Consumption per guest</h2>
                   </div>
-                  <div className="grid gap-3 md:grid-cols-4">
+                  <div className="mb-3 text-xs text-slate-400">These settings apply to all matches</div>
+                  <div className="grid gap-3 xl:grid-cols-4">
                     <NumberInput
                       label="Signature country drink"
                       value={rules.signatureCountryDrinkPerGuest}
@@ -1310,39 +2033,97 @@ export default function App() {
                   </div>
                 </Card>
 
-                <Card className="overflow-hidden">
-                  <div className="flex flex-col justify-between gap-3 border-b border-slate-200 p-5 md:flex-row md:items-center">
-                    <div className="flex items-center gap-2">
-                      <DollarSign size={18} />
-                      <h2 className="font-bold">Live estimate</h2>
+                <div className="grid gap-6 xl:grid-cols-[minmax(0,1.05fr)_minmax(0,1.35fr)]">
+                  <Card className="p-5">
+                    <div className="flex flex-col justify-between gap-4 md:flex-row md:items-start">
+                      <div>
+                        <div className="flex items-center gap-2 text-sm text-slate-500">
+                          <CalendarDays size={16} /> {miamiDateTime(selectedMatch.kickoffDateTime)} | {formatMatchStage(selectedMatch)}
+                        </div>
+                        <h2 className="mt-2 text-2xl font-black">
+                          {countriesById[teamA]?.flag} {countriesById[teamA]?.name || teamA}{' '}
+                          <span className="text-slate-400">vs</span> {countriesById[teamB]?.flag} {countriesById[teamB]?.name || teamB}
+                        </h2>
+                      </div>
+                      <select
+                        className="rounded-xl border border-slate-200 px-3 py-2 text-sm"
+                        value={selectedPlan.planningStatus}
+                        onChange={(event) => savePlan(selectedMatch.id, { planningStatus: event.target.value })}
+                      >
+                        {STATUS_OPTIONS.map((status) => (
+                          <option key={status} value={status}>
+                            {status}
+                          </option>
+                        ))}
+                      </select>
                     </div>
-                    <div className="grid grid-cols-2 gap-2 text-center text-sm md:grid-cols-4">
-                      <div className="rounded-xl bg-slate-100 p-3">
-                        <div className="text-xs text-slate-500">Revenue</div>
-                        <div className="font-black">{money(estimate.totals.revenue)}</div>
+
+                    <div className="mt-5 grid gap-4">
+                      <NumberInput
+                        label="Expected attendance"
+                        helperText="Expected guests for this match"
+                        value={selectedPlan.expectedAttendance}
+                        onChange={(value) => savePlan(selectedMatch.id, { expectedAttendance: Math.max(0, Math.round(value)) })}
+                        suffix="guests"
+                        step={1}
+                      />
+                    </div>
+                    <div className="mt-4">
+                      <FanSplitControl
+                        match={selectedMatch}
+                        plan={selectedPlan}
+                        countriesById={countriesById}
+                        disabled={!selectedMatchResolved}
+                        onChange={updateSplit}
+                      />
+                    </div>
+                    {!selectedMatchResolved && (
+                      <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800">
+                        Teams not confirmed yet - revenue estimate disabled.
                       </div>
-                      <div className="rounded-xl bg-slate-100 p-3">
-                        <div className="text-xs text-slate-500">Cost</div>
-                        <div className="font-black">{money(estimate.totals.cost)}</div>
+                    )}
+                    <textarea
+                      className="mt-4 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm outline-none"
+                      rows={2}
+                      placeholder="Match notes..."
+                      value={selectedPlan.notes || ''}
+                      onChange={(event) => savePlan(selectedMatch.id, { notes: event.target.value })}
+                    />
+                  </Card>
+
+                  <Card className="overflow-hidden">
+                    <div className="flex flex-col justify-between gap-3 border-b border-slate-200 p-5 md:flex-row md:items-center">
+                      <div className="flex items-center gap-2">
+                        <DollarSign size={18} />
+                        <h2 className="font-bold">Estimated sales</h2>
                       </div>
-                      <div className="rounded-xl bg-emerald-50 p-3 text-emerald-800">
-                        <div className="text-xs">Profit</div>
-                        <div className="font-black">{money(estimate.totals.profit)}</div>
-                      </div>
-                      <div className="rounded-xl bg-slate-100 p-3">
-                        <div className="text-xs text-slate-500">Margin</div>
-                        <div className="font-black">{percent(estimate.totals.margin)}</div>
+                      <div className="grid grid-cols-2 gap-2 text-center text-sm md:grid-cols-4">
+                        <div className="rounded-xl bg-slate-100 p-3">
+                          <div className="text-xs text-slate-500">Revenue</div>
+                          <div className="text-lg font-black">{money(estimate.totals.revenue)}</div>
+                        </div>
+                        <div className="rounded-xl bg-slate-100 p-3">
+                          <div className="text-xs text-slate-500">Cost</div>
+                          <div className="font-black">{money(estimate.totals.cost)}</div>
+                        </div>
+                        <div className="rounded-xl bg-emerald-50 p-3 text-emerald-800">
+                          <div className="text-xs">Profit</div>
+                          <div className="text-lg font-black">{money(estimate.totals.profit)}</div>
+                        </div>
+                        <div className="rounded-xl bg-slate-100 p-3">
+                          <div className="text-xs text-slate-500">Margin</div>
+                          <div className="font-black">{percent(estimate.totals.margin)}</div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  {estimate.totals.hasMissingPricing && (
-                    <div className="border-b border-amber-200 bg-amber-50 px-5 py-3 text-sm text-amber-800">
-                      Some estimate rows are missing menu pricing. Units are still shown; revenue and profit use 0 for missing prices.
-                    </div>
-                  )}
-                  <div className="overflow-auto">
-                    <table className="w-full min-w-[760px] text-sm">
-                      <thead className="bg-slate-50 text-left text-xs uppercase text-slate-500">
+                    {estimate.totals.hasMissingPricing && (
+                      <div className="border-b border-amber-200 bg-amber-50 px-5 py-3 text-sm text-amber-800">
+                        Some items don't have prices yet. Go to Menu & pricing to complete setup
+                      </div>
+                    )}
+                    <div className="overflow-auto">
+                      <table className="w-full min-w-[760px] text-sm">
+                        <thead className="bg-slate-50 text-left text-xs uppercase text-slate-500">
                           <tr>
                             <th className="p-3">Item</th>
                             <th className="p-3">Context</th>
@@ -1352,11 +2133,11 @@ export default function App() {
                             <th className="p-3 text-right">Cost</th>
                             <th className="p-3 text-right">Profit</th>
                             <th className="p-3">Pricing</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {estimate.rows.length ? (
-                          estimate.rows.map((row) => (
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {estimate.rows.length ? (
+                            estimate.rows.map((row) => (
                               <tr key={`${row.kind}:${row.id}`} className="border-t border-slate-100">
                                 <td className="p-3 font-semibold">{row.name}</td>
                                 <td className="p-3 text-slate-500">{row.contextSummary || row.role}</td>
@@ -1366,111 +2147,38 @@ export default function App() {
                                 <td className="p-3 text-right">{money(row.totalCost)}</td>
                                 <td className="p-3 text-right font-bold">{money(row.profit)}</td>
                                 <td className="p-3 text-xs text-amber-700">
-                                {row.missingMenuItem
-                                  ? 'Missing menu item'
-                                  : row.missingCost || row.missingSellPrice
-                                    ? `Missing ${[row.missingCost ? 'cost' : '', row.missingSellPrice ? 'sell price' : ''].filter(Boolean).join(' and ')}`
-                                    : 'OK'}
-                              </td>
-                            </tr>
-                          ))
+                                  {row.missingMenuItem
+                                    ? 'Missing menu item'
+                                    : row.missingCost || row.missingSellPrice
+                                      ? `Missing ${[row.missingCost ? 'cost' : '', row.missingSellPrice ? 'sell price' : ''].filter(Boolean).join(' and ')}`
+                                      : 'OK'}
+                                </td>
+                              </tr>
+                            ))
                           ) : (
                             <tr>
                               <td colSpan={8} className="p-6 text-center text-slate-500">
                                 {selectedMatchResolved ? 'Add expected attendance to see estimates.' : selectedMatch ? 'Teams not confirmed yet - revenue estimate disabled.' : 'Select a match to see match-level estimates.'}
                               </td>
                             </tr>
-                        )}
-                      </tbody>
-                    </table>
-                  </div>
-                </Card>
-
-                {selectedMatch && selectedPlan ? (
-                  <>
-                    <Card className="p-5">
-                      <div className="flex flex-col justify-between gap-4 md:flex-row md:items-start">
-                        <div>
-                          <div className="flex items-center gap-2 text-sm text-slate-500">
-                            <CalendarDays size={16} /> {miamiDateTime(selectedMatch.kickoffDateTime)} | {formatMatchStage(selectedMatch)}
-                          </div>
-                          <h2 className="mt-2 text-2xl font-black">
-                            {countriesById[teamA]?.flag} {countriesById[teamA]?.name || teamA}{' '}
-                            <span className="text-slate-400">vs</span> {countriesById[teamB]?.flag} {countriesById[teamB]?.name || teamB}
-                          </h2>
-                        </div>
-                        <select
-                          className="rounded-xl border border-slate-200 px-3 py-2 text-sm"
-                          value={selectedPlan.planningStatus}
-                          onChange={(event) => savePlan(selectedMatch.id, { planningStatus: event.target.value })}
-                        >
-                          {STATUS_OPTIONS.map((status) => (
-                            <option key={status} value={status}>
-                              {status}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-
-                      <div className="mt-5 grid gap-4">
-                        <NumberInput
-                          label="Expected attendance"
-                          value={selectedPlan.expectedAttendance}
-                          onChange={(value) => savePlan(selectedMatch.id, { expectedAttendance: Math.max(0, Math.round(value)) })}
-                          suffix="guests"
-                          step={1}
-                        />
-                      </div>
-                      <div className="mt-4">
-                        <FanSplitControl
-                          match={selectedMatch}
-                          plan={selectedPlan}
-                          countriesById={countriesById}
-                          disabled={!selectedMatchResolved}
-                          onChange={updateSplit}
-                        />
-                      </div>
-                      {!selectedMatchResolved && (
-                        <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800">
-                          Teams not confirmed yet - revenue estimate disabled.
-                        </div>
-                      )}
-                      <textarea
-                        className="mt-4 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm outline-none"
-                        rows={2}
-                        placeholder="Match notes..."
-                        value={selectedPlan.notes || ''}
-                        onChange={(event) => savePlan(selectedMatch.id, { notes: event.target.value })}
-                      />
-                    </Card>
-
-                    <div className="grid gap-4 md:grid-cols-2">
-                      <CountryMiniCard country={countriesById[teamA]} drinksById={drinksById} foodsById={foodsById} brandsById={brandsById} />
-                      <CountryMiniCard country={countriesById[teamB]} drinksById={drinksById} foodsById={foodsById} brandsById={brandsById} />
-                    </div>
-                  </>
-                ) : (
-                  <Card className="p-5">
-                    <div className="text-sm text-slate-500">
-                      No match selected. Pick a match from the list or from a calendar day to open match-specific details.
+                          )}
+                        </tbody>
+                      </table>
                     </div>
                   </Card>
-                )}
-              </>
-            )}
+                </div>
 
-            {activeView === 'pricing' && (
-                <PricingPanel
-                  menuItems={menuItems}
-                  updateMenuItem={updateMenuItem}
-                  countries={COUNTRIES}
-                  countriesById={countriesById}
-                  drinksById={drinksById}
-                  foodsById={foodsById}
-                  selectedMatch={selectedMatch}
-                />
-              )}
-          </main>
+                <div className="grid gap-4 xl:grid-cols-2">
+                  <CountryMiniCard country={countriesById[teamA]} drinksById={drinksById} foodsById={foodsById} brandsById={brandsById} />
+                  <CountryMiniCard country={countriesById[teamB]} drinksById={drinksById} foodsById={foodsById} brandsById={brandsById} />
+                </div>
+              </section>
+            ) : (
+              <Card className="p-8">
+                <div className="text-lg font-semibold text-slate-700">Select a match from the list to start planning</div>
+                <div className="mt-2 text-sm text-slate-500">Planner inputs and estimated sales appear here after you choose a match.</div>
+              </Card>
+            ))}
         </div>
       </div>
     </div>
